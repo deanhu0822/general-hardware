@@ -26,12 +26,12 @@ export function HeaderMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" aria-label="Menu">
+        <Button variant="ghost" aria-label="Menu">
           Menu
           <ChevronDown data-icon="inline-end" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" sideOffset={8} className="w-72">
+      <DropdownMenuContent align="end" sideOffset={8} className="liquid-glass w-72">
         <DropdownMenuGroup>
           <Action href="/sample" title="See an example" detail="Read a finished review." />
           <Action href="/packets/new" title="Start a review" detail="Use your own documents." />

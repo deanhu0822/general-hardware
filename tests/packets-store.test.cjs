@@ -33,6 +33,18 @@ test("freezing makes the request immutable and binds the order to the manifest d
   assert.equal(store.sources(alice, clone.id).length, 3);
 });
 
+test("a review is identified with one sector and keeps it", (t) => {
+  const { store, alice } = stores(t);
+  assert.throws(() => store.createRequest(alice, { ...fixtureBrief, sectorTags: [] }), /one sector/);
+  assert.throws(() => store.createRequest(alice, { ...fixtureBrief, sectorTags: ["aerospace", "space"] }), /one sector/);
+  const r = store.createRequest(alice, { ...fixtureBrief, sectorTags: ["aerospace"] });
+  assert.deepEqual(r.brief.sectorTags, ["aerospace"]);
+  assert.throws(() => store.updateBrief(alice, r.id, { ...fixtureBrief, sectorTags: ["space"] }), /already has its sector/);
+  const kept = store.updateBrief(alice, r.id, { ...fixtureBrief, sectorTags: ["aerospace"], title: "still aerospace" });
+  assert.equal(kept.brief.title, "still aerospace");
+  assert.deepEqual(kept.brief.sectorTags, ["aerospace"]);
+});
+
 test("preflight rejects an order before the boundary is acknowledged or sources exist", (t) => {
   const { store, alice } = stores(t);
   const r = store.createRequest(alice, { ...fixtureBrief, acknowledged: false });

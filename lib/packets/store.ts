@@ -5,6 +5,7 @@ import {
   BRIEF_LIMITS,
   manifestDigest,
   PacketError,
+  isSectorTag,
   parseBrief,
   parseSourceInput,
   sha256,
@@ -20,6 +21,9 @@ import {
 } from "./model";
 
 const now = () => new Date().toISOString();
+function singleSector(tags: string[]) {
+  return tags.length === 1 && isSectorTag(tags[0]) ? tags[0] : null;
+}
 
 // ---------------------------------------------------------------------------
 // Records
@@ -214,6 +218,7 @@ export class PacketStore {
   }
   createRequest(customer: User, brief: unknown): RequestRecord {
     const parsed = parseBrief(brief);
+    if (!singleSector(parsed.sectorTags)) throw new PacketError("Choose one sector for this review.");
     const id = randomUUID();
     const at = now();
     this.db
@@ -246,6 +251,10 @@ export class PacketStore {
           "frozen",
         );
       const parsed = parseBrief(brief);
+      const current = singleSector(r.brief.sectorTags);
+      const next = singleSector(parsed.sectorTags);
+      if (!next) throw new PacketError("Choose one sector for this review.");
+      if (current && current !== next) throw new PacketError("This review already has its sector.", 409, "sector-locked");
       this.db.prepare("UPDATE pk_requests SET brief=?, updated_at=? WHERE id=?").run(JSON.stringify(parsed), now(), id);
       return this.request(customer, id);
     });

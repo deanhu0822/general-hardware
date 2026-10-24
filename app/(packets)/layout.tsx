@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 /** Product shell for the packet business. Neutral surfaces, one accent, no decorative chrome. */
 export default function PacketsLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="caid flex min-h-screen flex-col bg-neutral-50 text-foreground">
+    <div className="caid flex min-h-screen flex-col text-foreground">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-md focus:bg-background focus:px-3 focus:py-2 focus:text-sm focus:shadow">
         Skip to content
       </a>
-      <header className="border-b border-border bg-background">
+      <header>
         <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-3 px-4">
           <Link href="/" className="text-[15px] font-medium tracking-tight">
             General Hardware

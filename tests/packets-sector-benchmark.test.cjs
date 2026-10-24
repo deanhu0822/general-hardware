@@ -5,8 +5,32 @@ const fs = require("node:fs");
 const path = require("node:path");
 require("./_ts-loader.cjs");
 const { SECTOR_CASES, validateSectorBenchmark, toSectorEvalCase, scoreSectorPacket, sectorRunPlan, sectorCoverageReport } = require("../lib/packets/sector-benchmark.ts");
+const { SECTOR_TAGS } = require("../lib/packets/client-model.ts");
+const { syntheticBriefForSector } = require("../lib/packets/sector-briefs.ts");
 const { fixturePacketBody } = require("../lib/packets/fixture.ts");
 const { anchorFor, ENGINEERING_BOUNDARY, PACKET_SCHEMA, validatePacket } = require("../lib/packets/model.ts");
+
+test("each sector click fills the documented development brief", () => {
+  const ids = new Set();
+  for (const sector of SECTOR_TAGS) {
+    const fill = syntheticBriefForSector(sector.id);
+    const source = SECTOR_CASES.find((c) => c.id === fill.caseId);
+    assert.equal(source.sector, sector.id);
+    assert.equal(source.kind, "complete");
+    assert.equal(source.split, "development");
+    assert.equal(fill.brief.product, source.brief.product);
+    assert.equal(fill.brief.title, source.brief.title);
+    assert.equal(fill.brief.issue, source.brief.issue);
+    assert.equal(fill.brief.goal, source.brief.goal);
+    assert.equal(fill.brief.constraints, source.brief.constraints);
+    assert.equal(fill.brief.conditions, source.brief.conditions);
+    assert.equal(fill.brief.decision, source.brief.decision);
+    assert.deepEqual(fill.brief.sectorTags, [sector.id]);
+    assert.equal(fill.brief.acknowledged, true);
+    ids.add(fill.caseId);
+  }
+  assert.equal(ids.size, 8);
+});
 
 test("all eight sectors have equal product/condition/split coverage and unique frozen requests", () => {
   const info = validateSectorBenchmark();

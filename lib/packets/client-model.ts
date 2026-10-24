@@ -32,7 +32,7 @@ export function emptyBrief(): Brief {
     product: "",
     title: "",
     baseline: "",
-    sectorTags: [DEMONSTRATED_SECTOR],
+    sectorTags: [],
     issue: "",
     goal: "",
     constraints: "",

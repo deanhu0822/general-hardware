@@ -80,7 +80,7 @@ export function PacketView(p: PacketViewProps) {
         </p>
       </header>
 
-      <Card className="border-primary/40">
+      <Card className="liquid-glass">
         <CardHeader>
           <CardDescription className="text-xs font-semibold uppercase tracking-wide text-primary">{presentation === "B" ? "Next required action before any approval" : "Next action"}</CardDescription>
           <CardTitle className="text-lg leading-snug">{packet.nextAction.action}</CardTitle>
@@ -160,10 +160,10 @@ export function PacketView(p: PacketViewProps) {
           {packet.evidenceGaps.map((g) => {
             const selected = p.selectedEvidence === g.id;
             return (
-              <li key={g.id} id={`gap-${g.id}`} className={`rounded-lg border bg-background p-3 ${g.id === packet.nextAction.gapId ? "border-amber-400" : "border-border"} ${selected ? "ring-2 ring-primary" : ""}`}>
+              <li key={g.id} id={`gap-${g.id}`} className={g.id === packet.nextAction.gapId || selected ? "liquid-glass rounded-lg p-3" : "rounded-lg border border-border bg-background p-3"}>
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <p className="font-medium">
-                    {g.gap} {g.id === packet.nextAction.gapId ? <Badge variant="outline" className="ml-1 border-amber-400 text-amber-700">drives next action</Badge> : null}
+                    {g.gap} {g.id === packet.nextAction.gapId ? <Badge variant="secondary" className="ml-1">drives next action</Badge> : null}
                   </p>
                   {mode === "study" && p.onSelectEvidence ? (
                     <Button type="button" size="sm" variant={selected ? "default" : "outline"} aria-pressed={selected} onClick={() => p.onSelectEvidence?.(g.id)}>

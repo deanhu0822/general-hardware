@@ -14,7 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { api, ApiError } from "./api";
-import { BRIEF_LIMITS, emptyBrief, SECTOR_TAGS, UNCLASSIFIED } from "@/lib/packets/client-model";
+import { BRIEF_LIMITS, emptyBrief, SECTOR_TAGS, sectorLabel, type SectorTagId } from "@/lib/packets/client-model";
+import { selectedSector, syntheticBriefForSector } from "@/lib/packets/sector-briefs";
 import type { Brief, Offer, Preflight, SourceManifestEntry } from "@/lib/packets/model";
 import type { OrderRecord, RunEvent } from "@/lib/packets/store";
 
@@ -51,7 +52,11 @@ export function Intake({ requestId }: { requestId: string | null }) {
     void Promise.resolve().then(() => {
       try {
         const raw = localStorage.getItem(DRAFT_KEY(requestId));
-        if (raw && !requestId) setBrief({ ...emptyBrief(), ...JSON.parse(raw) });
+        if (raw && !requestId) {
+          const restored = { ...emptyBrief(), ...JSON.parse(raw) };
+          const sector = selectedSector(restored.sectorTags);
+          setBrief(sector && !restored.issue ? syntheticBriefForSector(sector).brief : restored);
+        }
       } catch {
         /* ignore corrupt drafts */
       }
@@ -219,10 +224,19 @@ export function Intake({ requestId }: { requestId: string | null }) {
   const order = status?.order ?? detail?.order ?? null;
   const run = status?.run ?? null;
   const offer = detail?.offer;
+  const chosen = selectedSector(brief.sectorTags);
+  const identified = selectedSector(detail?.request.brief.sectorTags ?? []);
+  const sectorLocked = frozen || identified !== null;
+  const syntheticCase = chosen ? syntheticBriefForSector(chosen) : null;
   const setB = <K extends keyof Brief>(k: K, v: Brief[K]) => {
     setBrief((b) => ({ ...b, [k]: v }));
     setDirty(true);
   };
+  function chooseSector(id: SectorTagId) {
+    if (sectorLocked || chosen === id) return;
+    setBrief(syntheticBriefForSector(id).brief);
+    setDirty(true);
+  }
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
@@ -235,7 +249,7 @@ export function Intake({ requestId }: { requestId: string | null }) {
                 <Lock className="size-3.5" aria-hidden="true" /> Frozen as version {detail?.request.frozenVersion}. A materially changed request is a new request and a separate order.
               </span>
             ) : (
-              "Describe the request, add the sources the packet may cite, then purchase. Drafts are preserved."
+              "Choose one sector. The brief fills from the labeled synthetic example, and that sector stays with this review."
             )}
           </p>
         </header>
@@ -256,7 +270,7 @@ export function Intake({ requestId }: { requestId: string | null }) {
         <Card>
           <CardHeader>
             <CardTitle className="text-base">Brief</CardTitle>
-            <CardDescription>Author-entered values are labeled as such in the packet. They are not evidence.</CardDescription>
+            <CardDescription>One sector identifies this request. The filled text is a labeled synthetic example, not evidence.</CardDescription>
           </CardHeader>
           <CardContent>
             <form
@@ -267,6 +281,27 @@ export function Intake({ requestId }: { requestId: string | null }) {
               noValidate
             >
               <FieldGroup>
+                <Field>
+                  <FieldLabel>Sector</FieldLabel>
+                  <div className="flex flex-wrap gap-1.5" role="radiogroup" aria-label="Sector">
+                    {SECTOR_TAGS.map((t) => {
+                      const on = chosen === t.id;
+                      return (
+                        <Button key={t.id} type="button" size="sm" variant={on ? "default" : "outline"} role="radio" aria-checked={on} disabled={sectorLocked && !on} onClick={() => chooseSector(t.id)}>
+                          {t.label}
+                        </Button>
+                      );
+                    })}
+                  </div>
+                  <FieldDescription>
+                    {sectorLocked && chosen
+                      ? `${sectorLabel(chosen)} stays with this review.`
+                      : "Choose one sector. The brief fills itself, and this review keeps that sector."}
+                  </FieldDescription>
+                </Field>
+                {chosen && syntheticCase ? (
+                <div className="grid gap-4">
+                <p className="text-sm text-muted-foreground">Synthetic example · {syntheticCase.caseId}. Filled from that labeled fixture.</p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field>
                     <FieldLabel htmlFor="product">Product or team</FieldLabel>
@@ -274,26 +309,12 @@ export function Intake({ requestId }: { requestId: string | null }) {
                   </Field>
                   <Field>
                     <FieldLabel htmlFor="title">Request title</FieldLabel>
-                    <Input id="title" disabled={frozen} maxLength={limits.short} value={brief.title} onChange={(e) => setB("title", e.target.value)} placeholder="e.g. Investigate intermittent J12 disconnects…" />
+                    <Input id="title" disabled={frozen} maxLength={limits.short} value={brief.title} onChange={(e) => setB("title", e.target.value)} />
                   </Field>
-                  <Field>
+                  <Field className="sm:col-span-2">
                     <FieldLabel htmlFor="baseline">Baseline revision</FieldLabel>
                     <Input id="baseline" disabled={frozen} maxLength={limits.short} value={brief.baseline} onChange={(e) => setB("baseline", e.target.value)} placeholder="Leave empty if unknown" />
                     <FieldDescription>Recorded as Unknown when empty. Never inferred.</FieldDescription>
-                  </Field>
-                  <Field>
-                    <FieldLabel>Sector tags</FieldLabel>
-                    <div className="flex flex-wrap gap-1.5" role="group" aria-label="Sector tags">
-                      {SECTOR_TAGS.map((t) => {
-                        const on = brief.sectorTags.includes(t.id);
-                        return (
-                          <Button key={t.id} type="button" size="xs" variant={on ? "default" : "outline"} aria-pressed={on} disabled={frozen} onClick={() => setB("sectorTags", on ? brief.sectorTags.filter((x) => x !== t.id) : [...brief.sectorTags.filter((x) => x !== UNCLASSIFIED), t.id])}>
-                            {t.label}
-                          </Button>
-                        );
-                      })}
-                    </div>
-                    <FieldDescription>Metadata only; no sector-specific compliance claims.</FieldDescription>
                   </Field>
                 </div>
                 <Field>
@@ -308,8 +329,8 @@ export function Intake({ requestId }: { requestId: string | null }) {
                   <FieldLabel htmlFor="decision">Decision the engineering reviewer needs to make</FieldLabel>
                   <Textarea id="decision" disabled={frozen} rows={2} maxLength={limits.long} value={brief.decision} onChange={(e) => setB("decision", e.target.value)} />
                 </Field>
-                <details className="rounded-md border border-border p-3">
-                  <summary className="cursor-pointer text-sm font-medium">Optional: constraints, operating conditions, candidate, desired next action</summary>
+                <details className="rounded-md border border-border p-3" open>
+                  <summary className="cursor-pointer text-sm font-medium">Constraints, operating conditions, candidate, desired next action</summary>
                   <div className="mt-3 grid gap-4">
                     <Field>
                       <FieldLabel htmlFor="constraints">Constraints</FieldLabel>
@@ -337,11 +358,13 @@ export function Intake({ requestId }: { requestId: string | null }) {
                 </Field>
                 {!frozen ? (
                   <div className="flex flex-wrap gap-2">
-                    <Button type="submit" variant={requestId ? "outline" : "default"} disabled={busy === "save"}>
+                    <Button type="submit" variant={requestId ? "outline" : "default"} disabled={busy === "save" || !chosen}>
                       {busy === "save" ? "Saving…" : requestId ? "Save draft" : "Save and continue"}
                     </Button>
                     {dirty ? <span className="self-center text-xs text-muted-foreground">Unsaved changes are kept in this browser.</span> : null}
                   </div>
+                ) : null}
+                </div>
                 ) : null}
               </FieldGroup>
             </form>

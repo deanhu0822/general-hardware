@@ -71,8 +71,8 @@ function AccountForm() {
     }
   }
   return (
-    <div className="mx-auto max-w-md">
-      <Card>
+    <div className="mx-auto w-full max-w-md">
+      <Card className="liquid-glass">
         <CardHeader>
           <CardTitle>{mode === "login" ? "Sign in" : "Create a customer account"}</CardTitle>
           <CardDescription>{mode === "login" ? "Access your requests, orders and delivered packets." : "A customer account buys and reads review packets. It has no engineering reviewer authority."}</CardDescription>

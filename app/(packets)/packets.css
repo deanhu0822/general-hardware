@@ -52,3 +52,46 @@ body:has(.caid) .excerpt mark.ring-2 { background: oklch(0.88 0.1 255); }
 @media (max-width: 420px) {
   body:has(.caid) { font-size: 14px; }
 }
+
+/* Liquid glass: translucent fill, blurred backdrop, no stroke. */
+body:has(.caid) .caid {
+  background-color: oklch(0.975 0.004 255);
+  background-image:
+    radial-gradient(ellipse 72% 42% at 0% 0%, oklch(0.9 0.045 255 / 0.55), transparent 58%),
+    radial-gradient(ellipse 48% 36% at 100% 6%, oklch(0.93 0.03 210 / 0.5), transparent 52%);
+}
+body:has(.caid) .liquid-glass,
+body:has(.caid) .caid > header,
+body:has(.caid) [data-slot="alert"],
+body:has(.caid) [data-slot="dropdown-menu-content"],
+body:has(.caid) [data-slot="sheet-content"] {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background-color: oklch(1 0 0 / 0.58);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  backdrop-filter: blur(28px) saturate(1.8);
+}
+body:has(.caid) .caid > header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: oklch(1 0 0 / 0.5);
+}
+body:has(.caid) [data-slot="sheet-overlay"] {
+  background-color: oklch(0.97 0.01 255 / 0.28);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+}
+@media (prefers-reduced-transparency: reduce) {
+  body:has(.caid) .liquid-glass,
+  body:has(.caid) .caid > header,
+  body:has(.caid) [data-slot="alert"],
+  body:has(.caid) [data-slot="dropdown-menu-content"],
+  body:has(.caid) [data-slot="sheet-content"],
+  body:has(.caid) [data-slot="sheet-overlay"] {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: oklch(0.99 0 0 / 0.96);
+  }
+}
