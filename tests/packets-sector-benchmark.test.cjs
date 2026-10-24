@@ -27,6 +27,14 @@ test("each sector click fills the documented development brief", () => {
     assert.equal(fill.brief.decision, source.brief.decision);
     assert.deepEqual(fill.brief.sectorTags, [sector.id]);
     assert.equal(fill.brief.acknowledged, true);
+    assert.equal(fill.sources.length, 4);
+    assert.equal(fill.alternatives.length, 2);
+    assert.equal(fill.graph.nodes.length, 12);
+    assert.equal(fill.graph.edges.length, 14);
+    assert.deepEqual(
+      new Set(fill.graph.nodes.map((n) => n.category)),
+      new Set(["sources", "hardware", "alternatives", "constraints"]),
+    );
     ids.add(fill.caseId);
   }
   assert.equal(ids.size, 8);

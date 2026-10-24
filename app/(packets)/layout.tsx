@@ -20,7 +20,23 @@ export default function PacketsLayout({ children }: { children: React.ReactNode 
           <Link href="/" className="text-[15px] font-medium tracking-tight">
             General Hardware
           </Link>
-          <HeaderMenu />
+          <div className="flex items-center gap-1 text-sm">
+            <nav aria-label="Primary" className="flex items-center gap-0.5 sm:gap-1">
+              <Link href="/sample" className="rounded-md px-2 py-1 text-muted-foreground hover:bg-white/60 hover:text-foreground">
+                Example
+              </Link>
+              <Link href="/packets/new" className="rounded-md px-2 py-1 text-muted-foreground hover:bg-white/60 hover:text-foreground">
+                Review
+              </Link>
+              <Link href="/graph" className="rounded-md px-2 py-1 text-muted-foreground hover:bg-white/60 hover:text-foreground">
+                Node graph
+              </Link>
+              <Link href="/account" className="rounded-md px-2 py-1 text-muted-foreground hover:bg-white/60 hover:text-foreground">
+                Sign in
+              </Link>
+            </nav>
+            <HeaderMenu />
+          </div>
         </div>
       </header>
       <main id="main" className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-6 sm:py-8">

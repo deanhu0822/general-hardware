@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
-import { AlertCircle, CheckCircle2, CircleDashed, Lock, RefreshCw, Trash2, Upload, XCircle } from "lucide-react";
+import { AlertCircle, ArrowUpRight, CheckCircle2, CircleDashed, GitBranch, Lock, RefreshCw, Trash2, Upload, XCircle } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import { api, ApiError } from "./api";
-import { BRIEF_LIMITS, emptyBrief, SECTOR_TAGS, sectorLabel, type SectorTagId } from "@/lib/packets/client-model";
+import { HardwareNodeGraph } from "./hardware-node-graph";
+import { BRIEF_LIMITS, emptyBrief, isSectorTag, SECTOR_TAGS, sectorLabel, type SectorTagId } from "@/lib/packets/client-model";
 import { selectedSector, syntheticBriefForSector } from "@/lib/packets/sector-briefs";
 import type { Brief, Offer, Preflight, SourceManifestEntry } from "@/lib/packets/model";
 import type { OrderRecord, RunEvent } from "@/lib/packets/store";
@@ -43,6 +44,7 @@ export function Intake({ requestId }: { requestId: string | null }) {
   const [error, setError] = useState<{ message: string; status: number } | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [source, setSource] = useState({ name: "", revision: "", content: "" });
+  const [viewMode, setViewMode] = useState<"brief" | "graph">("brief");
   const eventsAfter = useRef(0);
   const [events, setEvents] = useState<RunEvent[]>([]);
 
@@ -51,6 +53,13 @@ export function Intake({ requestId }: { requestId: string | null }) {
     // Restore after hydration so the server and client first paint match.
     void Promise.resolve().then(() => {
       try {
+        if (!requestId) {
+          const querySector = new URLSearchParams(window.location.search).get("sector");
+          if (querySector && isSectorTag(querySector)) {
+            setBrief(syntheticBriefForSector(querySector).brief);
+            return;
+          }
+        }
         const raw = localStorage.getItem(DRAFT_KEY(requestId));
         if (raw && !requestId) {
           const restored = { ...emptyBrief(), ...JSON.parse(raw) };
@@ -238,11 +247,40 @@ export function Intake({ requestId }: { requestId: string | null }) {
     setDirty(true);
   }
 
+  const graphHref = chosen ? `/graph?sector=${chosen}` : "/graph";
+
   return (
     <div className="grid gap-6 lg:grid-cols-[1fr_22rem]">
       <div className="space-y-6">
-        <header className="space-y-1">
-          <h1>{requestId ? brief.title || "Untitled request" : "New J12 review request"}</h1>
+        <header className="space-y-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h1>{requestId ? brief.title || "Untitled request" : "New J12 review request"}</h1>
+            <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Review view mode">
+              <Button
+                type="button"
+                size="sm"
+                variant={viewMode === "brief" ? "default" : "outline"}
+                aria-pressed={viewMode === "brief"}
+                onClick={() => setViewMode("brief")}
+              >
+                Brief view
+              </Button>
+              <Button
+                type="button"
+                size="sm"
+                variant={viewMode === "graph" ? "default" : "outline"}
+                aria-pressed={viewMode === "graph"}
+                onClick={() => setViewMode("graph")}
+              >
+                <GitBranch data-icon="inline-start" /> Alternative & node graph
+              </Button>
+              <Button asChild size="sm" variant="outline">
+                <Link href={graphHref}>
+                  Open /graph <ArrowUpRight data-icon="inline-end" />
+                </Link>
+              </Button>
+            </div>
+          </div>
           <p className="text-sm text-muted-foreground">
             {frozen ? (
               <span className="inline-flex items-center gap-1">
@@ -258,13 +296,37 @@ export function Intake({ requestId }: { requestId: string | null }) {
           <Alert variant="destructive" role="alert">
             <AlertCircle />
             <AlertTitle>Something needs attention</AlertTitle>
-            <AlertDescription>{error.message}</AlertDescription>
+            <AlertDescription className="space-y-2">
+              <p>{error.message}</p>
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <Button type="button" size="xs" variant="outline" onClick={() => setViewMode("graph")}>
+                  <GitBranch data-icon="inline-start" /> Alternative & node graph view
+                </Button>
+                <Button asChild size="xs" variant="outline">
+                  <Link href={graphHref}>
+                    Open /graph <ArrowUpRight data-icon="inline-end" />
+                  </Link>
+                </Button>
+                <Button asChild size="xs" variant="outline">
+                  <Link href="/sample">See example</Link>
+                </Button>
+              </div>
+            </AlertDescription>
           </Alert>
         ) : null}
         {notice ? (
           <p role="status" className="text-sm text-muted-foreground">
             {notice}
           </p>
+        ) : null}
+
+        {viewMode === "graph" ? (
+          <HardwareNodeGraph
+            sector={chosen}
+            onSectorChange={chooseSector}
+            sectorLocked={sectorLocked}
+            embedded
+          />
         ) : null}
 
         <Card>

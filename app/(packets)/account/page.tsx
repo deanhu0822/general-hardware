@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState, type FormEvent } from "react";
+import { ArrowUpRight, GitBranch } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -112,7 +114,19 @@ function AccountForm() {
               </Field>
               {error ? (
                 <Alert variant="destructive" role="alert">
-                  <AlertDescription>{error}</AlertDescription>
+                  <AlertDescription className="space-y-2">
+                    <p>{error}</p>
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      <Button asChild size="xs" variant="outline">
+                        <Link href="/graph">
+                          <GitBranch data-icon="inline-start" /> Open node graph
+                        </Link>
+                      </Button>
+                      <Button asChild size="xs" variant="outline">
+                        <Link href="/sample">See example</Link>
+                      </Button>
+                    </div>
+                  </AlertDescription>
                 </Alert>
               ) : null}
               <div className="flex flex-wrap items-center justify-between gap-2">
@@ -125,6 +139,25 @@ function AccountForm() {
               </div>
             </FieldGroup>
           </form>
+          <Separator />
+          <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+            <span>Explore without signing in</span>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <Button asChild size="xs" variant="outline">
+                <Link href="/graph">
+                  <GitBranch data-icon="inline-start" /> Node graph
+                </Link>
+              </Button>
+              <Button asChild size="xs" variant="outline">
+                <Link href="/sample">Example</Link>
+              </Button>
+              <Button asChild size="xs" variant="outline">
+                <Link href="/packets/new">
+                  Start review <ArrowUpRight data-icon="inline-end" />
+                </Link>
+              </Button>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

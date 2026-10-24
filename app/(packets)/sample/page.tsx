@@ -17,20 +17,36 @@ export default function SamplePage() {
           Every source, claim and gap below is invented to show the packet format. Nothing here is a real field report, part, rating or approval, and no model produced it.{" "}
           <Link href="/packets/new" className="text-primary underline-offset-4 hover:underline">
             Prepare a packet from your own sources
+          </Link>{" "}
+          or{" "}
+          <Link href="/graph" className="text-primary underline-offset-4 hover:underline">
+            open the node graph
           </Link>
           .
         </AlertDescription>
       </Alert>
-      <Button asChild variant="outline"><Link href="/sample/coverage">Explore all-sector evaluation fixtures</Link></Button>
+      <div className="flex flex-wrap items-center gap-2">
+        <Button asChild variant="outline">
+          <Link href="/graph">Open node graph</Link>
+        </Button>
+        <Button asChild variant="outline">
+          <Link href="/sample/coverage">Explore all-sector evaluation fixtures</Link>
+        </Button>
+      </div>
       <PacketView
         packet={packet}
         mode="sample"
         sources={fixtureSources.map((s) => ({ sourceId: s.sourceId, content: s.content }))}
         downloadHref="/api/packets/sample?format=markdown"
         actions={
-          <Button asChild variant="outline">
-            <Link href="/packets/new">Prepare my packet</Link>
-          </Button>
+          <>
+            <Button asChild variant="outline">
+              <Link href="/packets/new">Prepare my packet</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/graph">Node graph</Link>
+            </Button>
+          </>
         }
       />
     </div>

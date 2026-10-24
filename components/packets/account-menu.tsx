@@ -33,8 +33,9 @@ export function HeaderMenu() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={8} className="liquid-glass w-72">
         <DropdownMenuGroup>
-          <Action href="/sample" title="See an example" detail="Read a finished review." />
-          <Action href="/packets/new" title="Start a review" detail="Use your own documents." />
+          <Action href="/sample" title="See an example" detail="Read a finished review or switch to its graph." />
+          <Action href="/packets/new" title="Start a review" detail="Pick a sector to fill its synthetic brief." />
+          <Action href="/graph" title="Node graph" detail="Hardware plans, changes, and relationships." />
         </DropdownMenuGroup>
         {me ? (
           <>
