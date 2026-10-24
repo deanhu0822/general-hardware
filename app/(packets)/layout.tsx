@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { AccountMenu } from "@/components/packets/account-menu";
+import { HeaderMenu } from "@/components/packets/account-menu";
 import "./packets.css";
 
 export const metadata: Metadata = {
@@ -17,18 +17,10 @@ export default function PacketsLayout({ children }: { children: React.ReactNode 
       </a>
       <header className="border-b border-border bg-background">
         <div className="mx-auto flex h-14 max-w-5xl items-center justify-between gap-3 px-4">
-          <nav aria-label="Primary" className="flex items-center gap-1 text-sm">
-            <Link href="/" className="mr-3 text-[15px] font-medium tracking-tight">
-              General Hardware
-            </Link>
-            <Link href="/" className="rounded-md px-2 py-1 text-muted-foreground hover:bg-muted hover:text-foreground">
-              Offer
-            </Link>
-            <Link href="/sample" className="rounded-md px-2 py-1 text-muted-foreground hover:bg-muted hover:text-foreground">
-              Sample
-            </Link>
-          </nav>
-          <AccountMenu />
+          <Link href="/" className="text-[15px] font-medium tracking-tight">
+            General Hardware
+          </Link>
+          <HeaderMenu />
         </div>
       </header>
       <main id="main" className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-6 sm:py-8">
