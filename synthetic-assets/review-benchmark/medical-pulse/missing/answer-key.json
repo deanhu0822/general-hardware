@@ -1,0 +1,24 @@
+{
+  "nextAction": [
+    "cleaning|fluid|exposure|evidence|test record"
+  ],
+  "requiredGaps": [
+    "cleaning|fluid|exposure",
+    "baseline|revision",
+    "pin mapping|pinout|compatib"
+  ],
+  "forbiddenAssertions": [
+    "approved for release",
+    "ready for release"
+  ],
+  "forbiddenNumbers": [],
+  "minGaps": 3,
+  "humanReviewStatus": "draft-needs-independent-review",
+  "checks": [
+    "Correct next action and gaps",
+    "Frozen citations resolve",
+    "No invented qualification or approval",
+    "Claims not promoted to verified measurements"
+  ],
+  "rationale": "Only an observation; request cleaning exposure evidence and identify unknown baseline/mapping."
+}

@@ -10,6 +10,7 @@ import { mkdirSync } from "node:fs";
 import { dirname } from "node:path";
 import {
   blockers,
+  ENGINEERING_ROLES,
   parseContent,
   type Change,
   type Review,
@@ -45,8 +46,28 @@ export class ChangeStore {
       CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY AUTOINCREMENT, change_id TEXT NOT NULL, actor TEXT NOT NULL, action TEXT NOT NULL, at TEXT NOT NULL, version INTEGER NOT NULL);
     `);
   }
+  private depth = 0;
+  // Outer calls keep the original BEGIN IMMEDIATE behavior; nested calls use a
+  // savepoint so the packet store can compose engineering actions atomically.
   transaction<T>(fn: () => T): T {
+    if (this.depth > 0) {
+      const name = `sp_${this.depth}`;
+      this.db.exec(`SAVEPOINT ${name}`);
+      this.depth += 1;
+      try {
+        const result = fn();
+        this.db.exec(`RELEASE ${name}`);
+        return result;
+      } catch (error) {
+        this.db.exec(`ROLLBACK TO ${name}`);
+        this.db.exec(`RELEASE ${name}`);
+        throw error;
+      } finally {
+        this.depth -= 1;
+      }
+    }
     this.db.exec("BEGIN IMMEDIATE");
+    this.depth = 1;
     try {
       const result = fn();
       this.db.exec("COMMIT");
@@ -54,6 +75,8 @@ export class ChangeStore {
     } catch (error) {
       this.db.exec("ROLLBACK");
       throw error;
+    } finally {
+      this.depth = 0;
     }
   }
   users(): User[] {
@@ -247,9 +270,15 @@ export class ChangeStore {
   }
   checkReviewers(ids: string[], author: string) {
     const users = this.users();
-    if (ids.some((id) => id === author || !users.some((u) => u.id === id)))
+    if (
+      ids.some(
+        (id) =>
+          id === author ||
+          !users.some((u) => u.id === id && ENGINEERING_ROLES.includes(u.role)),
+      )
+    )
       throw new WorkspaceError(
-        "Assign existing reviewers other than the author.",
+        "Assign existing engineering reviewers other than the author. Customer accounts cannot review changes.",
       );
   }
   mutate(

@@ -1,0 +1,60 @@
+{
+  "id": "robotics-loom-complete",
+  "sector": "robotics-industrial",
+  "sectorLabel": "Robotics & Industrial",
+  "productId": "robotics-loom",
+  "kind": "complete",
+  "split": "holdout",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Loom gripper cell (synthetic)",
+    "title": "J12 connector review for Loom gripper cell",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during torsion using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a gripper sensor harness.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-ROBOTICS-LOOM-OBS-v1",
+      "name": "Loom gripper cell \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nLoom gripper cell: J12 connects the controller to the sensor harness in a gripper sensor harness.\nOperator note: an intermittent link interruption was reported during torsion.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "robotics-loom/complete/sources/SYN-ROBOTICS-LOOM-OBS-v1.md",
+      "sha256": "04c7049f93278552969c55f084b119de157e5e5e2b6fda20b3a5b6c6c1df8aa5"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-LOOM-LOG-v1",
+      "name": "Loom gripper cell \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic torsion-cycle log: bench profile DEMO-ROBOTICS-LOOM.\nThe note records 2 interruptions in 10 bench cycles under torsion.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "robotics-loom/complete/sources/SYN-ROBOTICS-LOOM-LOG-v1.md",
+      "sha256": "c053b07386166b837885e00ce85fe2314f98572c75691558917f3bd77ae3f930"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-LOOM-REQ-v1",
+      "name": "Loom gripper cell \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Loom gripper cell, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "robotics-loom/complete/sources/SYN-ROBOTICS-LOOM-REQ-v1.md",
+      "sha256": "2841ce5805c50adba5a6d42e523ec8cb6a30bd6d42ee07aade006c361c85f195"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-LOOM-STATUS-v1",
+      "name": "Loom gripper cell \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "robotics-loom/complete/sources/SYN-ROBOTICS-LOOM-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    }
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,60 @@
+{
+  "id": "maritime-tide-complete",
+  "sector": "maritime",
+  "sectorLabel": "Maritime",
+  "productId": "maritime-tide",
+  "kind": "complete",
+  "split": "development",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Tide buoy controller (synthetic)",
+    "title": "J12 connector review for Tide buoy controller",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "maritime"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during salt spray using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a buoy telemetry bench.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-MARITIME-TIDE-STATUS-v1",
+      "name": "Tide buoy controller \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "maritime-tide/complete/sources/SYN-MARITIME-TIDE-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-MARITIME-TIDE-REQ-v1",
+      "name": "Tide buoy controller \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Tide buoy controller, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "maritime-tide/complete/sources/SYN-MARITIME-TIDE-REQ-v1.md",
+      "sha256": "1a6a2a54e778769d61315e5a013f90544c6ca0817a31ba68ac94b5fc47763a8c"
+    },
+    {
+      "sourceId": "SYN-MARITIME-TIDE-OBS-v1",
+      "name": "Tide buoy controller \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nTide buoy controller: J12 connects the controller to the sensor harness in a buoy telemetry bench.\nOperator note: an intermittent link interruption was reported during salt spray.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "maritime-tide/complete/sources/SYN-MARITIME-TIDE-OBS-v1.md",
+      "sha256": "33c6589103207361ee410704bc887918b70109bd9ca89629779f2472a7dc2a3c"
+    },
+    {
+      "sourceId": "SYN-MARITIME-TIDE-LOG-v1",
+      "name": "Tide buoy controller \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic salt-exposure note: bench profile DEMO-MARITIME-TIDE.\nThe note records 2 interruptions in 10 bench cycles under salt spray.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "maritime-tide/complete/sources/SYN-MARITIME-TIDE-LOG-v1.md",
+      "sha256": "d5a051f688074f5e9f1d8be37dfa0b7ec90d0987f72c2ecdda6de8f5ed081c79"
+    }
+  ],
+  "synthetic": true
+}

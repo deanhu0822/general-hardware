@@ -1,0 +1,10 @@
+{
+  "id": "space-orbit",
+  "name": "Orbit deployment rig",
+  "sector": "space",
+  "sectorLabel": "Space",
+  "context": "a deployment-mechanism ground rig",
+  "stress": "shock",
+  "split": "holdout",
+  "synthetic": true
+}

@@ -22,6 +22,7 @@ import {
 type Snapshot = {
   user: User | null;
   needsSetup?: boolean;
+  restricted?: "customer";
   users?: User[];
   changes?: Change[];
   heads?: Record<string, number>;
@@ -267,7 +268,9 @@ export default function ChangeWorkspace() {
             <p>
               {snapshot.needsSetup
                 ? "The server operator supplies a setup token. This creates the first owner account."
-                : "Your reviews are recorded against your signed-in account."}
+                : snapshot.restricted === "customer"
+                  ? "You are signed in with a customer account. Customer accounts buy review packets and have no engineering workspace access; sign in with an engineering account to continue."
+                  : "Your reviews are recorded against your signed-in account."}
             </p>
             <form
               onSubmit={(e) => {

@@ -1,0 +1,10 @@
+{
+  "id": "heavy-quarry",
+  "name": "Quarry excavator simulator",
+  "sector": "heavy-machinery",
+  "sectorLabel": "Heavy Machinery",
+  "context": "an excavator sensor-interface simulator",
+  "stress": "dust exposure",
+  "split": "development",
+  "synthetic": true
+}

@@ -1,0 +1,60 @@
+{
+  "id": "heavy-quarry-complete",
+  "sector": "heavy-machinery",
+  "sectorLabel": "Heavy Machinery",
+  "productId": "heavy-quarry",
+  "kind": "complete",
+  "split": "development",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Quarry excavator simulator (synthetic)",
+    "title": "J12 connector review for Quarry excavator simulator",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "heavy-machinery"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during dust exposure using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: an excavator sensor-interface simulator.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-HEAVY-QUARRY-LOG-v1",
+      "name": "Quarry excavator simulator \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic dust-chamber note: bench profile DEMO-HEAVY-QUARRY.\nThe note records 2 interruptions in 10 bench cycles under dust exposure.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "heavy-quarry/complete/sources/SYN-HEAVY-QUARRY-LOG-v1.md",
+      "sha256": "4eea9c811bafb022c0a3e79ceb061cf29c862a78946de171acc3458c2dcdb282"
+    },
+    {
+      "sourceId": "SYN-HEAVY-QUARRY-OBS-v1",
+      "name": "Quarry excavator simulator \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nQuarry excavator simulator: J12 connects the controller to the sensor harness in an excavator sensor-interface simulator.\nOperator note: an intermittent link interruption was reported during dust exposure.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "heavy-quarry/complete/sources/SYN-HEAVY-QUARRY-OBS-v1.md",
+      "sha256": "7dcea1595a240c8fb91e5aaaae30bd7212b4ee7fd6c1de7498f82cca2ef60b86"
+    },
+    {
+      "sourceId": "SYN-HEAVY-QUARRY-STATUS-v1",
+      "name": "Quarry excavator simulator \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "heavy-quarry/complete/sources/SYN-HEAVY-QUARRY-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-HEAVY-QUARRY-REQ-v1",
+      "name": "Quarry excavator simulator \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Quarry excavator simulator, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "heavy-quarry/complete/sources/SYN-HEAVY-QUARRY-REQ-v1.md",
+      "sha256": "50347f9caba87f5c276c62dde8f74596a3c09816c8b776c4cb2ccf7f3ba895f8"
+    }
+  ],
+  "synthetic": true
+}

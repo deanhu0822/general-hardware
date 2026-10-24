@@ -1,0 +1,69 @@
+{
+  "evalSetVersion": "caid.j12-eval-set/1",
+  "evalSetDigest": "57a121067d342979c08c35fda4b91d7ff60a78e8248cb6fef2ebddbfd9d74614",
+  "policyVersion": "caid.j12-effort-policy/1",
+  "model": "claude-opus-5-5",
+  "sdkVersion": "0.3.310",
+  "account": {
+    "apiKeySource": "/login managed key",
+    "apiProvider": "firstParty",
+    "organization": "Caid"
+  },
+  "startedAt": "2026-10-24T22:15:27.586Z",
+  "finishedAt": "2026-10-24T22:16:16.738Z",
+  "efforts": [
+    "medium"
+  ],
+  "cases": [
+    "complete"
+  ],
+  "repeats": 1,
+  "ceilingUsd": 2,
+  "perRunBudgetUsd": 1.5,
+  "totalCostUsd": 0.18380219999999997,
+  "observations": [
+    {
+      "effort": "medium",
+      "case": "complete",
+      "repeat": 1,
+      "ok": true,
+      "error": null,
+      "score": {
+        "schemaValid": true,
+        "citationsResolve": true,
+        "nextActionCorrect": true,
+        "requiredGapsCovered": 4,
+        "requiredGapsTotal": 4,
+        "missingEvidenceDisclosed": true,
+        "unsupportedNumericClaims": 0,
+        "forbiddenAssertions": [],
+        "falseApproval": false,
+        "taskComplete": true,
+        "validationErrors": []
+      },
+      "costUsd": 0.18380219999999997,
+      "inputTokens": 28722,
+      "outputTokens": 6144,
+      "toolCalls": 5,
+      "repairs": 0,
+      "escalations": 0,
+      "effectiveModel": "claude-opus-5-5",
+      "effectiveEffort": "medium",
+      "contextWindow": 1000000,
+      "latencyMs": 49150,
+      "phases": [
+        {
+          "phase": "initial",
+          "effort": "medium",
+          "reason": "evaluation: forced start effort medium",
+          "costUsd": 0.18380219999999997,
+          "inputTokens": 28722,
+          "outputTokens": 6144,
+          "toolCalls": 5,
+          "latencyMs": 49144
+        }
+      ],
+      "eventCount": 8
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "heavy-atlas",
+  "name": "Atlas loader control rig",
+  "sector": "heavy-machinery",
+  "sectorLabel": "Heavy Machinery",
+  "context": "a loader control-harness rig",
+  "stress": "mechanical shock",
+  "split": "holdout",
+  "synthetic": true
+}

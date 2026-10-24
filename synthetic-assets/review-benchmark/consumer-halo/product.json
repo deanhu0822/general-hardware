@@ -1,0 +1,10 @@
+{
+  "id": "consumer-halo",
+  "name": "Halo wearable dock",
+  "sector": "consumer-tech",
+  "sectorLabel": "Consumer Tech",
+  "context": "a wearable charging dock prototype",
+  "stress": "humidity",
+  "split": "holdout",
+  "synthetic": true
+}

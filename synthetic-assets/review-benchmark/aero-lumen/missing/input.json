@@ -1,0 +1,36 @@
+{
+  "id": "aero-lumen-missing",
+  "sector": "aerospace",
+  "sectorLabel": "Aerospace",
+  "productId": "aero-lumen",
+  "kind": "missing",
+  "split": "development",
+  "description": "Only an observation; request thermal cycling evidence and identify unknown baseline/mapping.",
+  "brief": {
+    "product": "Lumen avionics bench (synthetic)",
+    "title": "J12 connector review for Lumen avionics bench",
+    "baseline": "",
+    "sectorTags": [
+      "aerospace"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during thermal cycling using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a wing-instrumentation bench.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-AERO-LUMEN-OBS-v1",
+      "name": "Lumen avionics bench \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nLumen avionics bench: J12 connects the controller to the sensor harness in a wing-instrumentation bench.\nOperator note: an intermittent link interruption was reported during thermal cycling.\nThis observation alone does not establish a cause or suitability for operational use.\nNo thermal cycling test record accompanies this note.\nBaseline revision and J12 pin mapping are not recorded.\nIndependent review is pending.\n",
+      "file": "aero-lumen/missing/sources/SYN-AERO-LUMEN-OBS-v1.md",
+      "sha256": "31a980082d950c36a81acdd76200214ad0bc8bee3161c08eab90500a01b3334c"
+    }
+  ],
+  "synthetic": true
+}

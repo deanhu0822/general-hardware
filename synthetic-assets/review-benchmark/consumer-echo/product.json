@@ -1,0 +1,10 @@
+{
+  "id": "consumer-echo",
+  "name": "Echo speaker prototype",
+  "sector": "consumer-tech",
+  "sectorLabel": "Consumer Tech",
+  "context": "a speaker battery-interface prototype",
+  "stress": "drop handling",
+  "split": "development",
+  "synthetic": true
+}

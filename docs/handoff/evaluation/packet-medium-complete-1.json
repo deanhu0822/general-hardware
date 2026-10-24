@@ -1,0 +1,461 @@
+{
+  "schema": "caid.j12-review-packet/1",
+  "summary": {
+    "objective": "Decide whether to retain and investigate the current J12 connector or evaluate a replacement, without changing the board pinout.",
+    "requestVersion": 1,
+    "baseline": "Unknown",
+    "productLabel": "Rover Alpha (synthetic demonstration unit)",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "headline": "Intermittent J12 disconnects under vibration are reported but unmeasured; no vibration test, retention-force measurement, candidate datasheet or independent review exists, so no connector change can be approved for release yet."
+  },
+  "sourceRegister": [
+    {
+      "sourceId": "SYN-OBS-v1",
+      "name": "Field observation note — Rover Alpha J12 (synthetic)",
+      "revision": "v1 (synthetic)",
+      "sha256": "57c6fddbfdbe9e0e7b73eebc73880e77d3604304d52af9cc419db5b6f2b0b7d5",
+      "bytes": 745,
+      "importedAt": "2026-10-24T00:00:00.000Z",
+      "anchors": [
+        {
+          "anchorId": "obs-1",
+          "sourceId": "SYN-OBS-v1",
+          "start": 160,
+          "end": 276,
+          "excerpt": "Operators reported intermittent J12 connector disconnects during vibration on the test track on three separate days."
+        },
+        {
+          "anchorId": "obs-2",
+          "sourceId": "SYN-OBS-v1",
+          "start": 277,
+          "end": 403,
+          "excerpt": "Each report describes the drive controller losing its link to the sensor harness for one to three seconds and then recovering."
+        },
+        {
+          "anchorId": "obs-3",
+          "sourceId": "SYN-OBS-v1",
+          "start": 404,
+          "end": 545,
+          "excerpt": "No measured test result is supplied with this note. No vibration profile, accelerometer data or connector retention measurement was recorded."
+        },
+        {
+          "anchorId": "obs-4",
+          "sourceId": "SYN-OBS-v1",
+          "start": 546,
+          "end": 648,
+          "excerpt": "The reports do not identify whether the J12 shell, the contacts or the harness strain relief released."
+        }
+      ]
+    },
+    {
+      "sourceId": "SYN-REQ-v1",
+      "name": "Requirement note — J12 change constraints (synthetic)",
+      "revision": "v1 (synthetic)",
+      "sha256": "d943402166f12e7ddd1412ab4aecf96a00cd81cffa3465831679cb93245ecbb0",
+      "bytes": 615,
+      "importedAt": "2026-10-24T00:00:00.000Z",
+      "anchors": [
+        {
+          "anchorId": "req-1",
+          "sourceId": "SYN-REQ-v1",
+          "start": 73,
+          "end": 216,
+          "excerpt": "Constraint R1: Any connector change must preserve the existing board pinout so the controller firmware and the sensor harness remain unchanged."
+        },
+        {
+          "anchorId": "req-2",
+          "sourceId": "SYN-REQ-v1",
+          "start": 217,
+          "end": 327,
+          "excerpt": "Constraint R2: The replacement, if any, must be compatible with the existing drive controller board footprint."
+        },
+        {
+          "anchorId": "req-3",
+          "sourceId": "SYN-REQ-v1",
+          "start": 328,
+          "end": 409,
+          "excerpt": "The exact baseline revision of the controller board is not supplied in this note."
+        },
+        {
+          "anchorId": "req-4",
+          "sourceId": "SYN-REQ-v1",
+          "start": 410,
+          "end": 525,
+          "excerpt": "The pin mapping table and the compatibility measurements for any candidate connector are not supplied in this note."
+        }
+      ]
+    },
+    {
+      "sourceId": "SYN-GAPS-v1",
+      "name": "Evidence checklist — J12 review (synthetic)",
+      "revision": "v1 (synthetic)",
+      "sha256": "761b1a63f192e2023ca8e6d9b6fb1e9a23459de7becf52da41432071e426cf65",
+      "bytes": 558,
+      "importedAt": "2026-10-24T00:00:00.000Z",
+      "anchors": [
+        {
+          "anchorId": "gap-1",
+          "sourceId": "SYN-GAPS-v1",
+          "start": 66,
+          "end": 189,
+          "excerpt": "Checklist item 1: Vibration-test result for the current J12 connector — ABSENT. No vibration test has been run or recorded."
+        },
+        {
+          "anchorId": "gap-2",
+          "sourceId": "SYN-GAPS-v1",
+          "start": 190,
+          "end": 261,
+          "excerpt": "Checklist item 2: Connector retention-force measurement — not recorded."
+        },
+        {
+          "anchorId": "gap-3",
+          "sourceId": "SYN-GAPS-v1",
+          "start": 262,
+          "end": 337,
+          "excerpt": "Checklist item 3: Candidate replacement connector datasheet — not supplied."
+        },
+        {
+          "anchorId": "gap-4",
+          "sourceId": "SYN-GAPS-v1",
+          "start": 338,
+          "end": 453,
+          "excerpt": "Checklist item 4: Independent engineering review — an independent engineering reviewer has not approved the change."
+        },
+        {
+          "anchorId": "gap-5",
+          "sourceId": "SYN-GAPS-v1",
+          "start": 454,
+          "end": 550,
+          "excerpt": "Note: Items marked absent or not recorded block any release decision until evidence is obtained."
+        }
+      ]
+    }
+  ],
+  "knownFacts": [
+    {
+      "id": "F1",
+      "statement": "Operators reported intermittent J12 connector disconnects during vibration on the test track on three separate days.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-1"
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "statement": "Each report describes the drive controller losing its link to the sensor harness for one to three seconds and then recovering.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-2"
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "statement": "No measured test result, vibration profile, accelerometer data or connector retention measurement was recorded with the observation.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-3"
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "statement": "Constraint R1: any connector change must preserve the existing board pinout so controller firmware and sensor harness remain unchanged.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-1"
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "statement": "Constraint R2: any replacement must be compatible with the existing drive controller board footprint.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-2"
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "statement": "An independent engineering reviewer has not approved the change, and absent or unrecorded checklist items block any release decision until evidence is obtained.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-4"
+        },
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-5"
+        }
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "A1",
+      "kind": "retain-investigate",
+      "title": "Retain and investigate the current J12 connector",
+      "description": "Keep the existing J12 and determine the failure mode (shell, contacts or harness strain relief) through vibration testing and retention-force measurement. Whether the current connector is adequate is unknown until evidenced.",
+      "prerequisites": [
+        "Vibration test of the current J12 under a defined test-track profile",
+        "Connector retention-force measurement",
+        "Inspection to identify whether shell, contacts or strain relief released"
+      ],
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-4"
+        },
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-1"
+        },
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-2"
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "kind": "replacement",
+      "title": "Evaluate a replacement J12 connector",
+      "description": "Identify a candidate connector that preserves the existing pinout and the drive controller board footprint. No candidate is named; compatibility is unknown until datasheet, pin mapping and compatibility measurements are supplied.",
+      "prerequisites": [
+        "Candidate replacement connector datasheet",
+        "Pin mapping table confirming pinout preservation (R1)",
+        "Footprint compatibility evidence against the drive controller board (R2)",
+        "Vibration and retention testing of the candidate"
+      ],
+      "citations": [
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-1"
+        },
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-2"
+        },
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-4"
+        },
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-3"
+        }
+      ]
+    }
+  ],
+  "affectedArtifacts": [
+    {
+      "id": "AR1",
+      "label": "J12 connector on the drive controller board",
+      "status": "confirmed",
+      "basis": "Named as the connector with reported disconnects and subject of the change constraints.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-1"
+        },
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-2"
+        }
+      ]
+    },
+    {
+      "id": "AR2",
+      "label": "Sensor harness (including strain relief)",
+      "status": "confirmed",
+      "basis": "Link loss to the sensor harness is reported; harness must remain unchanged per R1.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-2"
+        },
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-1"
+        }
+      ]
+    },
+    {
+      "id": "AR3",
+      "label": "Controller firmware",
+      "status": "confirmed",
+      "basis": "R1 requires pinout preservation so controller firmware remains unchanged.",
+      "citations": [
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-1"
+        }
+      ]
+    },
+    {
+      "id": "AR4",
+      "label": "Drive controller board layout/footprint documentation (baseline revision unknown)",
+      "status": "suggested",
+      "basis": "Inference: footprint compatibility under R2 must be checked against board documentation whose baseline revision is not supplied.",
+      "citations": [
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-2"
+        },
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-3"
+        }
+      ]
+    }
+  ],
+  "evidenceGaps": [
+    {
+      "id": "G1",
+      "gap": "No vibration-test result for the current J12 connector; no vibration profile or accelerometer data.",
+      "whyItMatters": "Without it the reported disconnects cannot be reproduced or the current connector's adequacy judged.",
+      "citations": [
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-1"
+        },
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-3"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "gap": "Connector retention-force measurement not recorded.",
+      "whyItMatters": "Retention data is needed to distinguish a connector-retention problem from other causes.",
+      "citations": [
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-2"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "gap": "Failure location unknown: reports do not identify whether the J12 shell, contacts or harness strain relief released.",
+      "whyItMatters": "A strain-relief or harness cause might not be fixed by a connector change.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-v1",
+          "anchorId": "obs-4"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "gap": "No candidate replacement datasheet, pin mapping table or compatibility measurements.",
+      "whyItMatters": "Constraints R1 and R2 cannot be checked for any replacement without them.",
+      "citations": [
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-3"
+        },
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-4"
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "gap": "Exact baseline revision of the controller board not supplied.",
+      "whyItMatters": "Footprint and pinout comparisons require a defined baseline.",
+      "citations": [
+        {
+          "sourceId": "SYN-REQ-v1",
+          "anchorId": "req-3"
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "gap": "Independent engineering review has not approved the change.",
+      "whyItMatters": "Release decisions are blocked until independent review and evidence are obtained.",
+      "citations": [
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-4"
+        },
+        {
+          "sourceId": "SYN-GAPS-v1",
+          "anchorId": "gap-5"
+        }
+      ]
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "id": "Q1",
+      "question": "What vibration profile represents the test track, and can the current J12 disconnect be reproduced under it?",
+      "owner": "Test engineer",
+      "prerequisite": "Defined vibration profile and test setup (G1)"
+    },
+    {
+      "id": "Q2",
+      "question": "Did the J12 shell, contacts or harness strain relief release during the reported events?",
+      "owner": "Hardware engineer",
+      "prerequisite": "Inspection and retention-force measurement (G2, G3)"
+    },
+    {
+      "id": "Q3",
+      "question": "What is the exact baseline revision of the drive controller board and its J12 pin mapping?",
+      "owner": "Engineering owner",
+      "prerequisite": "Board revision records and pin mapping table (G5)"
+    },
+    {
+      "id": "Q4",
+      "question": "Does any candidate replacement connector preserve the pinout and fit the existing footprint?",
+      "owner": "Hardware engineer",
+      "prerequisite": "Candidate datasheet and compatibility measurements (G4)"
+    },
+    {
+      "id": "Q5",
+      "question": "Who is the independent engineering reviewer, and what evidence do they require before a release decision?",
+      "owner": "Engineering owner",
+      "prerequisite": "Completion of evidence items G1–G4 (G6)"
+    }
+  ],
+  "nextAction": {
+    "action": "Define a test-track vibration profile and run a recorded vibration test with retention-force measurement on the current J12 connector to reproduce and localize the disconnect before any connector change is considered.",
+    "ownerRole": "Test engineer with engineering owner",
+    "requiredInput": "Vibration profile, Rover Alpha unit at known board baseline revision, instrumentation for link monitoring and retention force",
+    "gapId": "G1",
+    "citations": [
+      {
+        "sourceId": "SYN-GAPS-v1",
+        "anchorId": "gap-1"
+      },
+      {
+        "sourceId": "SYN-GAPS-v1",
+        "anchorId": "gap-5"
+      }
+    ]
+  },
+  "limitations": [
+    "Packet ready means the paid preparation artifact was delivered. It is not engineering approval, a completed test or permission to release hardware. Independent engineering review and relevant physical evidence remain required.",
+    "All sources are labeled synthetic fixtures invented for demonstration; statements are recorded with kind \"synthetic fixture\" and are not real field reports, requirements or test data.",
+    "No measurements, part numbers, ratings or test results were supplied; none are asserted. The field lead's recommendation to investigate a connector change is recorded as content, not as a decision.",
+    "Baseline is Unknown; no customer candidate connector was named, so no customer-candidate alternative is included."
+  ]
+}

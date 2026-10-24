@@ -1,0 +1,6 @@
+SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.
+
+Synthetic humidity-exposure log: bench profile DEMO-CONSUMER-HALO.
+The note records 2 interruptions in 10 bench cycles under humidity.
+The setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.
+The bench conditions have not been shown to represent the intended operational environment.

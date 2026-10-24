@@ -1,0 +1,60 @@
+{
+  "id": "consumer-halo-complete",
+  "sector": "consumer-tech",
+  "sectorLabel": "Consumer Tech",
+  "productId": "consumer-halo",
+  "kind": "complete",
+  "split": "holdout",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Halo wearable dock (synthetic)",
+    "title": "J12 connector review for Halo wearable dock",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "consumer-tech"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during humidity using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a wearable charging dock prototype.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-CONSUMER-HALO-LOG-v1",
+      "name": "Halo wearable dock \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic humidity-exposure log: bench profile DEMO-CONSUMER-HALO.\nThe note records 2 interruptions in 10 bench cycles under humidity.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "consumer-halo/complete/sources/SYN-CONSUMER-HALO-LOG-v1.md",
+      "sha256": "0577ee0c50ec67c9197ec44d12d95456dedbd8730d2cca368bee6e9db1cb34b8"
+    },
+    {
+      "sourceId": "SYN-CONSUMER-HALO-STATUS-v1",
+      "name": "Halo wearable dock \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "consumer-halo/complete/sources/SYN-CONSUMER-HALO-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-CONSUMER-HALO-OBS-v1",
+      "name": "Halo wearable dock \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nHalo wearable dock: J12 connects the controller to the sensor harness in a wearable charging dock prototype.\nOperator note: an intermittent link interruption was reported during humidity.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "consumer-halo/complete/sources/SYN-CONSUMER-HALO-OBS-v1.md",
+      "sha256": "13bda399e06aa489766c89b066319f6dab910549b1498ce54fffaa120ee26f01"
+    },
+    {
+      "sourceId": "SYN-CONSUMER-HALO-REQ-v1",
+      "name": "Halo wearable dock \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Halo wearable dock, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "consumer-halo/complete/sources/SYN-CONSUMER-HALO-REQ-v1.md",
+      "sha256": "c284faec59ce4d7189263cad3ec5ecb16deb73e83dbbe0016b7bd41649cd6044"
+    }
+  ],
+  "synthetic": true
+}

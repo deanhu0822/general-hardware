@@ -28,6 +28,9 @@ export async function GET(request: NextRequest) {
     const user = store.user(request.cookies.get(cookieName)?.value || "");
     if (!user)
       return response({ user: null, needsSetup: store.users().length === 0 });
+    // Customer accounts buy review packets; they have no engineering workspace access.
+    if (user.role === "customer")
+      return response({ user: null, needsSetup: false, restricted: "customer" });
     const id = request.nextUrl.searchParams.get("id");
     const changes = store.list();
     return response({
@@ -130,6 +133,11 @@ export async function POST(request: NextRequest) {
     const user = store.user(token);
     if (!user)
       throw new WorkspaceError("Sign in to access the change workspace.", 401);
+    if (user.role === "customer" && data.action !== "logout")
+      throw new WorkspaceError(
+        "Customer accounts cannot author or review engineering changes. Packet purchases grant no engineering authority.",
+        403,
+      );
     if (data.action === "logout") {
       store.logout(token);
       const result = response({ ok: true });

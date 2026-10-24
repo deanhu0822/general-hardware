@@ -1,0 +1,10 @@
+{
+  "id": "auto-ember",
+  "name": "Ember charge-port emulator",
+  "sector": "automotive",
+  "sectorLabel": "Automotive",
+  "context": "a charge-port signal emulator",
+  "stress": "mating endurance",
+  "split": "holdout",
+  "synthetic": true
+}

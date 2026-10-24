@@ -1,0 +1,343 @@
+{
+  "schema": "caid.j12-review-packet/1",
+  "summary": {
+    "objective": "Decide whether to retain and investigate the current J12 connector or evaluate a replacement, without changing the board pinout.",
+    "requestVersion": 1,
+    "baseline": "Unknown",
+    "productLabel": "Rover Alpha (synthetic demonstration unit)",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "headline": "Only one synthetic field note exists, and it describes Rover Beta rather than Rover Alpha. It contains no measurements, vibration profile, retention value, pin mapping or board revision. A connector change cannot be considered until that evidence exists."
+  },
+  "sourceRegister": [
+    {
+      "sourceId": "SYN-OBS-only-v1",
+      "name": "Field observation note — Rover Beta J12 (synthetic)",
+      "revision": "v1 (synthetic)",
+      "sha256": "3e6846c6cdb7f0071b1f7914b53504d75394c000dc0e3454d8e8b4cb84aee5fa",
+      "bytes": 468,
+      "importedAt": "2026-10-24T00:00:00.000Z",
+      "anchors": [
+        {
+          "anchorId": "obs-synth",
+          "sourceId": "SYN-OBS-only-v1",
+          "start": 0,
+          "end": 90,
+          "excerpt": "SYNTHETIC FIXTURE. This note is invented for demonstration. It is not a real field report."
+        },
+        {
+          "anchorId": "obs-unit",
+          "sourceId": "SYN-OBS-only-v1",
+          "start": 92,
+          "end": 145,
+          "excerpt": "Rover Beta, Robotics & Industrial demonstration unit."
+        },
+        {
+          "anchorId": "obs-disconnect",
+          "sourceId": "SYN-OBS-only-v1",
+          "start": 159,
+          "end": 246,
+          "excerpt": "An operator reported two intermittent J12 connector disconnects during a vibration run."
+        },
+        {
+          "anchorId": "obs-link",
+          "sourceId": "SYN-OBS-only-v1",
+          "start": 247,
+          "end": 319,
+          "excerpt": "The drive controller lost its sensor-harness link briefly and recovered."
+        },
+        {
+          "anchorId": "obs-missing",
+          "sourceId": "SYN-OBS-only-v1",
+          "start": 320,
+          "end": 427,
+          "excerpt": "No measurement, vibration profile, retention value, pin mapping or board revision is recorded in this note."
+        },
+        {
+          "anchorId": "obs-alone",
+          "sourceId": "SYN-OBS-only-v1",
+          "start": 428,
+          "end": 468,
+          "excerpt": "No other document accompanies this note."
+        }
+      ]
+    }
+  ],
+  "knownFacts": [
+    {
+      "id": "KF-1",
+      "statement": "The source states that it is a synthetic fixture invented for demonstration and is not a real field report.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-synth"
+        }
+      ]
+    },
+    {
+      "id": "KF-2",
+      "statement": "The note says the unit is 'Rover Beta, Robotics & Industrial demonstration unit.'",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-unit"
+        }
+      ]
+    },
+    {
+      "id": "KF-3",
+      "statement": "An operator reported two intermittent J12 connector disconnects during a vibration run.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-disconnect"
+        }
+      ]
+    },
+    {
+      "id": "KF-4",
+      "statement": "The drive controller briefly lost its sensor-harness link and then recovered.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-link"
+        }
+      ]
+    },
+    {
+      "id": "KF-5",
+      "statement": "The note records no measurement, vibration profile, retention value, pin mapping or board revision.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    },
+    {
+      "id": "KF-6",
+      "statement": "No other document accompanies the note.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-alone"
+        }
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "ALT-1",
+      "kind": "retain-investigate",
+      "title": "Retain and investigate the current J12 connector",
+      "description": "Keep the existing J12 connector and find the cause of the reported intermittent disconnects (for example mating, retention, harness strain or contact condition) before any change. Whether the connector itself is the cause is unknown; the single note does not establish it.",
+      "prerequisites": [
+        "Identify the current J12 connector part and the board revision",
+        "Get a defined vibration profile and reproduce the fault with measurements",
+        "Inspect the connector and harness from the affected unit"
+      ],
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-disconnect"
+        },
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    },
+    {
+      "id": "ALT-2",
+      "kind": "replacement",
+      "title": "Evaluate a replacement J12 connector (pinout unchanged)",
+      "description": "Evaluate a replacement connector that keeps the existing board pinout. No candidate has been named, and compatibility with footprint, pinout, retention and vibration requirements is unknown until evidenced.",
+      "prerequisites": [
+        "Get the documented J12 pin mapping and footprint",
+        "Define retention and vibration requirements",
+        "Get candidate datasheets and run qualification testing by an independent reviewer"
+      ],
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        },
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-alone"
+        }
+      ]
+    }
+  ],
+  "affectedArtifacts": [
+    {
+      "id": "AA-1",
+      "label": "J12 connector and its mating sensor harness",
+      "status": "confirmed",
+      "basis": "The note reports J12 disconnects and loss of the sensor-harness link.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-disconnect"
+        },
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-link"
+        }
+      ]
+    },
+    {
+      "id": "AA-2",
+      "label": "Drive controller (sensor-harness link)",
+      "status": "confirmed",
+      "basis": "The note states the drive controller lost its sensor-harness link.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-link"
+        }
+      ]
+    },
+    {
+      "id": "AA-3",
+      "label": "Board pinout / J12 pin mapping documentation",
+      "status": "suggested",
+      "basis": "Inference: the goal requires keeping the pinout unchanged, but no pin mapping is recorded.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    },
+    {
+      "id": "AA-4",
+      "label": "Vibration test procedure / profile",
+      "status": "suggested",
+      "basis": "Inference: the disconnects occurred during a vibration run, but no profile is recorded.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    }
+  ],
+  "evidenceGaps": [
+    {
+      "id": "EG-1",
+      "gap": "Product mismatch: the request names Rover Alpha, but the only source describes Rover Beta. It is unknown whether the observation applies to Rover Alpha.",
+      "whyItMatters": "Evidence from a different unit may not represent the hardware under review.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-unit"
+        }
+      ]
+    },
+    {
+      "id": "EG-2",
+      "gap": "No measurements or vibration profile are recorded for the disconnect events.",
+      "whyItMatters": "Without reproducible conditions and data, the root cause cannot be attributed to the connector rather than the harness, mating or other factors.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    },
+    {
+      "id": "EG-3",
+      "gap": "No connector retention value or part identification is available.",
+      "whyItMatters": "Retaining the connector or comparing a replacement requires a known baseline retention and part.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    },
+    {
+      "id": "EG-4",
+      "gap": "No pin mapping or board revision is recorded. The baseline is Unknown.",
+      "whyItMatters": "The pinout-unchanged constraint cannot be checked without the documented pin mapping and board revision.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-missing"
+        }
+      ]
+    },
+    {
+      "id": "EG-5",
+      "gap": "Only one synthetic note with two operator-reported events exists, and no corroborating documents.",
+      "whyItMatters": "A single anecdotal report cannot establish frequency, severity or failure mode.",
+      "citations": [
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-alone"
+        },
+        {
+          "sourceId": "SYN-OBS-only-v1",
+          "anchorId": "obs-synth"
+        }
+      ]
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "id": "RQ-1",
+      "question": "Does the Rover Beta observation apply to Rover Alpha's J12 hardware and board revision?",
+      "owner": "Hardware lead",
+      "prerequisite": "Board revision and J12 part records for both units"
+    },
+    {
+      "id": "RQ-2",
+      "question": "Can the disconnect be reproduced under a defined vibration profile with link and contact measurements?",
+      "owner": "Test engineer",
+      "prerequisite": "Defined vibration profile and instrumented test setup"
+    },
+    {
+      "id": "RQ-3",
+      "question": "What is the current J12 connector part, its retention mechanism and its documented pin mapping?",
+      "owner": "Hardware design engineer",
+      "prerequisite": "Schematic, BOM and connector datasheet"
+    },
+    {
+      "id": "RQ-4",
+      "question": "Is the fault at the connector, the harness or the mating/strain relief, as shown by physical inspection?",
+      "owner": "Reliability engineer",
+      "prerequisite": "Affected unit and harness available for inspection"
+    }
+  ],
+  "nextAction": {
+    "action": "Confirm which unit and board revision the observation applies to, and collect the J12 part ID, pin mapping and board revision for Rover Alpha.",
+    "ownerRole": "Hardware lead",
+    "requiredInput": "Rover Alpha schematic/BOM, board revision, J12 connector datasheet",
+    "gapId": "EG-1",
+    "citations": [
+      {
+        "sourceId": "SYN-OBS-only-v1",
+        "anchorId": "obs-unit"
+      },
+      {
+        "sourceId": "SYN-OBS-only-v1",
+        "anchorId": "obs-missing"
+      }
+    ]
+  },
+  "limitations": [
+    "Packet ready means the paid preparation artifact was delivered. It is not engineering approval, a completed test or permission to release hardware. Independent engineering review and relevant physical evidence remain required.",
+    "This request is a labeled synthetic fixture; all source statements are kind 'synthetic fixture' and do not describe a real field report.",
+    "Only one source was available, and it concerns Rover Beta, not the requested Rover Alpha.",
+    "No measurements, ratings, part numbers or test results were available. None are asserted here.",
+    "No constraints, operating conditions or customer candidate were supplied."
+  ]
+}

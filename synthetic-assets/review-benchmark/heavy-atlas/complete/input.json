@@ -1,0 +1,60 @@
+{
+  "id": "heavy-atlas-complete",
+  "sector": "heavy-machinery",
+  "sectorLabel": "Heavy Machinery",
+  "productId": "heavy-atlas",
+  "kind": "complete",
+  "split": "holdout",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Atlas loader control rig (synthetic)",
+    "title": "J12 connector review for Atlas loader control rig",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "heavy-machinery"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during mechanical shock using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a loader control-harness rig.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-HEAVY-ATLAS-OBS-v1",
+      "name": "Atlas loader control rig \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAtlas loader control rig: J12 connects the controller to the sensor harness in a loader control-harness rig.\nOperator note: an intermittent link interruption was reported during mechanical shock.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "heavy-atlas/complete/sources/SYN-HEAVY-ATLAS-OBS-v1.md",
+      "sha256": "5232509c82f294180936f2e92ee58002dbb9962efecf3685fe688cff11721572"
+    },
+    {
+      "sourceId": "SYN-HEAVY-ATLAS-LOG-v1",
+      "name": "Atlas loader control rig \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic impact-cycle log: bench profile DEMO-HEAVY-ATLAS.\nThe note records 2 interruptions in 10 bench cycles under mechanical shock.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "heavy-atlas/complete/sources/SYN-HEAVY-ATLAS-LOG-v1.md",
+      "sha256": "a2a902ac27cbeab53efe03f7a7c180d639007e94d4265c87c07bcb2a75c6bb84"
+    },
+    {
+      "sourceId": "SYN-HEAVY-ATLAS-REQ-v1",
+      "name": "Atlas loader control rig \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Atlas loader control rig, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "heavy-atlas/complete/sources/SYN-HEAVY-ATLAS-REQ-v1.md",
+      "sha256": "1a30c10086aef2c63cdd7fae3ec10c98cd9ed468ee5ccfda1bec5bfb22321172"
+    },
+    {
+      "sourceId": "SYN-HEAVY-ATLAS-STATUS-v1",
+      "name": "Atlas loader control rig \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "heavy-atlas/complete/sources/SYN-HEAVY-ATLAS-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    }
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,60 @@
+{
+  "id": "robotics-cedar-complete",
+  "sector": "robotics-industrial",
+  "sectorLabel": "Robotics & Industrial",
+  "productId": "robotics-cedar",
+  "kind": "complete",
+  "split": "development",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Cedar inspection crawler (synthetic)",
+    "title": "J12 connector review for Cedar inspection crawler",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during vibration using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: an inspection-crawler control harness.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-OBS-v1",
+      "name": "Cedar inspection crawler \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nCedar inspection crawler: J12 connects the controller to the sensor harness in an inspection-crawler control harness.\nOperator note: an intermittent link interruption was reported during vibration.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "robotics-cedar/complete/sources/SYN-ROBOTICS-CEDAR-OBS-v1.md",
+      "sha256": "29593af44012227aea27a7547f647f6fdadb3e1cc395c02e054ea4d0c427f78a"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-STATUS-v1",
+      "name": "Cedar inspection crawler \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "robotics-cedar/complete/sources/SYN-ROBOTICS-CEDAR-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-LOG-v1",
+      "name": "Cedar inspection crawler \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic vibration bench note: bench profile DEMO-ROBOTICS-CEDAR.\nThe note records 2 interruptions in 10 bench cycles under vibration.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "robotics-cedar/complete/sources/SYN-ROBOTICS-CEDAR-LOG-v1.md",
+      "sha256": "d6ff35cf72e58e1c5ee56c603a42bac1b1ecd66a04a374c7af3f6392c06e38bf"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-REQ-v1",
+      "name": "Cedar inspection crawler \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Cedar inspection crawler, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "robotics-cedar/complete/sources/SYN-ROBOTICS-CEDAR-REQ-v1.md",
+      "sha256": "d73e684f8c1099f846c208f0aefde9ecfc44efba4a257d4e52aec2dc3f7957f9"
+    }
+  ],
+  "synthetic": true
+}

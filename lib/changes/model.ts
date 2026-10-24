@@ -53,12 +53,15 @@ export type Change = {
   updatedAt: string;
   revision?: number;
 };
+// "customer" accounts buy review packets. They never hold engineering authority:
+// they cannot be assigned as reviewers and cannot access the change workspace.
 export type User = {
   id: string;
   name: string;
   email: string;
-  role: "owner" | "reviewer";
+  role: "owner" | "reviewer" | "customer";
 };
+export const ENGINEERING_ROLES: ReadonlyArray<User["role"]> = ["owner", "reviewer"];
 export type Revision = {
   product: string;
   number: number;

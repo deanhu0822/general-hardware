@@ -1,0 +1,52 @@
+{
+  "id": "maritime-tide-conflicting",
+  "sector": "maritime",
+  "sectorLabel": "Maritime",
+  "productId": "maritime-tide",
+  "kind": "conflicting",
+  "split": "development",
+  "description": "Preserve both contradictory baseline/results; request authoritative records without choosing a winner.",
+  "brief": {
+    "product": "Tide buoy controller (synthetic)",
+    "title": "J12 connector review for Tide buoy controller",
+    "baseline": "",
+    "sectorTags": [
+      "maritime"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during salt spray using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a buoy telemetry bench.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-MARITIME-TIDE-NOTE-A-v1",
+      "name": "Tide buoy controller \u2014 note-a (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nTide buoy controller: J12 connects the controller to the sensor harness in a buoy telemetry bench.\nOperator note: an intermittent link interruption was reported during salt spray.\nThis observation alone does not establish a cause or suitability for operational use.\nShift note A names baseline Rev B and records 2 interruptions in 10 salt spray cycles.\n",
+      "file": "maritime-tide/conflicting/sources/SYN-MARITIME-TIDE-NOTE-A-v1.md",
+      "sha256": "86c43925ac96032f0c2d8f20de82176f00c08ac41936bd96e3486b7a053b2fcd"
+    },
+    {
+      "sourceId": "SYN-MARITIME-TIDE-STATUS-v1",
+      "name": "Tide buoy controller \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nNeither note is designated authoritative. The original test record and serial-to-revision register are unavailable.\nJ12 pin mapping is absent. Independent engineering review is pending.\n",
+      "file": "maritime-tide/conflicting/sources/SYN-MARITIME-TIDE-STATUS-v1.md",
+      "sha256": "7715716c17acffba4c6ef3a858042d08bf0f12e481f175142f26d1a098143b61"
+    },
+    {
+      "sourceId": "SYN-MARITIME-TIDE-NOTE-B-v1",
+      "name": "Tide buoy controller \u2014 note-b (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nFollow-up note for the same run and unit names baseline Rev C and records 7 interruptions in 10 salt spray cycles.\nIt does not explain or supersede shift note A.\n",
+      "file": "maritime-tide/conflicting/sources/SYN-MARITIME-TIDE-NOTE-B-v1.md",
+      "sha256": "2033fff8846169f675f608968c839a763e7f13d1c7a542be24c3ea558ed55e5b"
+    }
+  ],
+  "synthetic": true
+}

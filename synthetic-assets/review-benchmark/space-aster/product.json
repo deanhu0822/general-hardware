@@ -1,0 +1,10 @@
+{
+  "id": "space-aster",
+  "name": "Aster payload emulator",
+  "sector": "space",
+  "sectorLabel": "Space",
+  "context": "a payload interface emulator",
+  "stress": "thermal vacuum",
+  "split": "development",
+  "synthetic": true
+}

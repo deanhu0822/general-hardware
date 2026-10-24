@@ -1,0 +1,10 @@
+{
+  "id": "medical-flow",
+  "name": "Flow delivery bench",
+  "sector": "medical-devices",
+  "sectorLabel": "Medical Devices",
+  "context": "a nonclinical delivery-controller bench",
+  "stress": "latch cycling",
+  "split": "holdout",
+  "synthetic": true
+}

@@ -1,0 +1,10 @@
+{
+  "id": "auto-sable",
+  "name": "Sable body-controller bench",
+  "sector": "automotive",
+  "sectorLabel": "Automotive",
+  "context": "a stationary body-controller harness bench",
+  "stress": "thermal soak",
+  "split": "development",
+  "synthetic": true
+}

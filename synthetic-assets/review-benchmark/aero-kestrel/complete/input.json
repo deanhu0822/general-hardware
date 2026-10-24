@@ -1,0 +1,60 @@
+{
+  "id": "aero-kestrel-complete",
+  "sector": "aerospace",
+  "sectorLabel": "Aerospace",
+  "productId": "aero-kestrel",
+  "kind": "complete",
+  "split": "holdout",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Kestrel actuator rig (synthetic)",
+    "title": "J12 connector review for Kestrel actuator rig",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "aerospace"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during harness flex using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: an actuator sensor harness rig.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-AERO-KESTREL-OBS-v1",
+      "name": "Kestrel actuator rig \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nKestrel actuator rig: J12 connects the controller to the sensor harness in an actuator sensor harness rig.\nOperator note: an intermittent link interruption was reported during harness flex.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "aero-kestrel/complete/sources/SYN-AERO-KESTREL-OBS-v1.md",
+      "sha256": "4a9aa46cd6996c400f007da8198d7841ea27e1589dbd773308dc88e9873c74b0"
+    },
+    {
+      "sourceId": "SYN-AERO-KESTREL-REQ-v1",
+      "name": "Kestrel actuator rig \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Kestrel actuator rig, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "aero-kestrel/complete/sources/SYN-AERO-KESTREL-REQ-v1.md",
+      "sha256": "5c00378912e55060fbe635518a4a2f4fa05c90f85117e7ab4357935df039cfa6"
+    },
+    {
+      "sourceId": "SYN-AERO-KESTREL-STATUS-v1",
+      "name": "Kestrel actuator rig \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "aero-kestrel/complete/sources/SYN-AERO-KESTREL-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-AERO-KESTREL-LOG-v1",
+      "name": "Kestrel actuator rig \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic flex-cycle log: bench profile DEMO-AERO-KESTREL.\nThe note records 2 interruptions in 10 bench cycles under harness flex.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "aero-kestrel/complete/sources/SYN-AERO-KESTREL-LOG-v1.md",
+      "sha256": "64961e49c36c6e26e1f10f94e58ed2a190e94301123acf519b621223abf3d1e0"
+    }
+  ],
+  "synthetic": true
+}

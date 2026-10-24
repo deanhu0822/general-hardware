@@ -1,0 +1,36 @@
+{
+  "id": "heavy-atlas-missing",
+  "sector": "heavy-machinery",
+  "sectorLabel": "Heavy Machinery",
+  "productId": "heavy-atlas",
+  "kind": "missing",
+  "split": "holdout",
+  "description": "Only an observation; request mechanical shock evidence and identify unknown baseline/mapping.",
+  "brief": {
+    "product": "Atlas loader control rig (synthetic)",
+    "title": "J12 connector review for Atlas loader control rig",
+    "baseline": "",
+    "sectorTags": [
+      "heavy-machinery"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during mechanical shock using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a loader control-harness rig.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-HEAVY-ATLAS-OBS-v1",
+      "name": "Atlas loader control rig \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAtlas loader control rig: J12 connects the controller to the sensor harness in a loader control-harness rig.\nOperator note: an intermittent link interruption was reported during mechanical shock.\nThis observation alone does not establish a cause or suitability for operational use.\nNo mechanical shock test record accompanies this note.\nBaseline revision and J12 pin mapping are not recorded.\nIndependent review is pending.\n",
+      "file": "heavy-atlas/missing/sources/SYN-HEAVY-ATLAS-OBS-v1.md",
+      "sha256": "66ccaa1f834ff0250f286736c1a7178d50cbdf4203ce4f01a6021e5462303626"
+    }
+  ],
+  "synthetic": true
+}

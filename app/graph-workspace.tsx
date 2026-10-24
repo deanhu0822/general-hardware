@@ -18,6 +18,12 @@ import {
   type Viewport,
   useNodesState,
 } from '@xyflow/react';
+// Graph-only stylesheets stay with this component so the offer, intake and packet routes do not load them.
+import './graph-workspace.css';
+import './start-from-scratch.css';
+import './demo-walkthrough.css';
+import './opencad-workspace.css';
+import './workflow-improvements.css';
 import '@xyflow/react/dist/style.css';
 import {
   Activity,

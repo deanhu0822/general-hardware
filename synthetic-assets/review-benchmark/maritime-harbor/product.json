@@ -1,0 +1,10 @@
+{
+  "id": "maritime-harbor",
+  "name": "Harbor winch simulator",
+  "sector": "maritime",
+  "sectorLabel": "Maritime",
+  "context": "a winch control-panel simulator",
+  "stress": "water ingress",
+  "split": "holdout",
+  "synthetic": true
+}

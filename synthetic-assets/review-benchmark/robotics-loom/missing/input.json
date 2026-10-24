@@ -1,0 +1,36 @@
+{
+  "id": "robotics-loom-missing",
+  "sector": "robotics-industrial",
+  "sectorLabel": "Robotics & Industrial",
+  "productId": "robotics-loom",
+  "kind": "missing",
+  "split": "holdout",
+  "description": "Only an observation; request torsion evidence and identify unknown baseline/mapping.",
+  "brief": {
+    "product": "Loom gripper cell (synthetic)",
+    "title": "J12 connector review for Loom gripper cell",
+    "baseline": "",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during torsion using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a gripper sensor harness.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-ROBOTICS-LOOM-OBS-v1",
+      "name": "Loom gripper cell \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nLoom gripper cell: J12 connects the controller to the sensor harness in a gripper sensor harness.\nOperator note: an intermittent link interruption was reported during torsion.\nThis observation alone does not establish a cause or suitability for operational use.\nNo torsion test record accompanies this note.\nBaseline revision and J12 pin mapping are not recorded.\nIndependent review is pending.\n",
+      "file": "robotics-loom/missing/sources/SYN-ROBOTICS-LOOM-OBS-v1.md",
+      "sha256": "c8bf6622aa3a758956cc806304a8d214088329bcb6f5b0a034a49697497cd7cd"
+    }
+  ],
+  "synthetic": true
+}

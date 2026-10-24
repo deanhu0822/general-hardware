@@ -1,0 +1,36 @@
+{
+  "id": "maritime-harbor-missing",
+  "sector": "maritime",
+  "sectorLabel": "Maritime",
+  "productId": "maritime-harbor",
+  "kind": "missing",
+  "split": "holdout",
+  "description": "Only an observation; request water ingress evidence and identify unknown baseline/mapping.",
+  "brief": {
+    "product": "Harbor winch simulator (synthetic)",
+    "title": "J12 connector review for Harbor winch simulator",
+    "baseline": "",
+    "sectorTags": [
+      "maritime"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during water ingress using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a winch control-panel simulator.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-MARITIME-HARBOR-OBS-v1",
+      "name": "Harbor winch simulator \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nHarbor winch simulator: J12 connects the controller to the sensor harness in a winch control-panel simulator.\nOperator note: an intermittent link interruption was reported during water ingress.\nThis observation alone does not establish a cause or suitability for operational use.\nNo water ingress test record accompanies this note.\nBaseline revision and J12 pin mapping are not recorded.\nIndependent review is pending.\n",
+      "file": "maritime-harbor/missing/sources/SYN-MARITIME-HARBOR-OBS-v1.md",
+      "sha256": "41a2125a428243b88a90ab02138b221bb97dc38568b1b381dce913729d2c4a96"
+    }
+  ],
+  "synthetic": true
+}

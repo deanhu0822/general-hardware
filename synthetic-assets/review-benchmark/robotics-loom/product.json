@@ -1,0 +1,10 @@
+{
+  "id": "robotics-loom",
+  "name": "Loom gripper cell",
+  "sector": "robotics-industrial",
+  "sectorLabel": "Robotics & Industrial",
+  "context": "a gripper sensor harness",
+  "stress": "torsion",
+  "split": "holdout",
+  "synthetic": true
+}

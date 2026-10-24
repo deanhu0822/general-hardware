@@ -1,0 +1,36 @@
+{
+  "id": "auto-ember-missing",
+  "sector": "automotive",
+  "sectorLabel": "Automotive",
+  "productId": "auto-ember",
+  "kind": "missing",
+  "split": "holdout",
+  "description": "Only an observation; request mating endurance evidence and identify unknown baseline/mapping.",
+  "brief": {
+    "product": "Ember charge-port emulator (synthetic)",
+    "title": "J12 connector review for Ember charge-port emulator",
+    "baseline": "",
+    "sectorTags": [
+      "automotive"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during mating endurance using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a charge-port signal emulator.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-AUTO-EMBER-OBS-v1",
+      "name": "Ember charge-port emulator \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nEmber charge-port emulator: J12 connects the controller to the sensor harness in a charge-port signal emulator.\nOperator note: an intermittent link interruption was reported during mating endurance.\nThis observation alone does not establish a cause or suitability for operational use.\nNo mating endurance test record accompanies this note.\nBaseline revision and J12 pin mapping are not recorded.\nIndependent review is pending.\n",
+      "file": "auto-ember/missing/sources/SYN-AUTO-EMBER-OBS-v1.md",
+      "sha256": "4dc4c04365fb97a67ec4a90fe42118d957397c10b507e33c60bcac71fc76928a"
+    }
+  ],
+  "synthetic": true
+}

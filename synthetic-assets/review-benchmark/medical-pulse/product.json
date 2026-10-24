@@ -1,0 +1,10 @@
+{
+  "id": "medical-pulse",
+  "name": "Pulse monitor simulator",
+  "sector": "medical-devices",
+  "sectorLabel": "Medical Devices",
+  "context": "a nonclinical patient-monitor simulator",
+  "stress": "cleaning exposure",
+  "split": "development",
+  "synthetic": true
+}

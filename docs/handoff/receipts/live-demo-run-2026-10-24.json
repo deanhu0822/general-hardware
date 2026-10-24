@@ -1,0 +1,353 @@
+{
+  "note": "Sanitized receipt of the live end-to-end demo run on 2026-10-24: simulated (labeled) payment, real Claude Opus 5.5 generation through the Claude Agent SDK, real clarification. Synthetic sources; demo customer account. No live money.",
+  "order": {
+    "id": "49672d3a-b44c-45e9-9998-64485d1199e6",
+    "status": "paid",
+    "provider": "simulated",
+    "sandbox": 1,
+    "amount": "29.00",
+    "currency": "usd",
+    "paid_at": "2026-10-24T22:20:18.552Z",
+    "created_at": "2026-10-24T22:20:06.860Z"
+  },
+  "paymentEvents": [
+    {
+      "id": "evt_sim_679f6b08-f37a-462e-8659-636531acd7a9",
+      "type": "payment.succeeded",
+      "verified": 1,
+      "result": "paid: run d53d711f-f8e8-4a49-b56c-19b8b41f03ea attempt 1 queued",
+      "received_at": "2026-10-24T22:20:18.553Z"
+    }
+  ],
+  "run": {
+    "id": "d53d711f-f8e8-4a49-b56c-19b8b41f03ea",
+    "attempt": 1,
+    "status": "ready",
+    "budget_reserved_usd": 3.0,
+    "cost_usd": 0.16529679999999997,
+    "input_tokens": 27567,
+    "output_tokens": 5609,
+    "tool_calls": 5,
+    "repairs": 0,
+    "escalations": 0,
+    "started_at": "2026-10-24T22:20:18.650Z",
+    "finished_at": "2026-10-24T22:21:07.014Z",
+    "requested": {
+      "provider": "anthropic-agent-sdk",
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "contextWindow": 0,
+      "maxTurns": 40,
+      "maxToolCalls": 12,
+      "maxBudgetUsd": 3,
+      "deadlineMs": 600000,
+      "repairAttempts": 1,
+      "policyVersion": "caid.j12-effort-policy/1"
+    },
+    "effective": {
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "contextWindow": 1000000,
+      "supportsEffort": true,
+      "supportedEffortLevels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "sdkVersion": "0.3.310",
+      "claudeCodeVersion": "2.1.310",
+      "apiKeySource": "/login managed key",
+      "permissionMode": "dontAsk",
+      "tools": [
+        "mcp__caid__find_anchors",
+        "mcp__caid__read_source",
+        "mcp__caid__submit_packet"
+      ],
+      "betas": [],
+      "policyVersion": "caid.j12-effort-policy/1",
+      "selectionReason": "provisional default effort medium; no frozen evaluation has selected the lowest qualifying effort yet",
+      "provisional": true,
+      "phases": [
+        {
+          "phase": "initial",
+          "effort": "medium",
+          "reason": "provisional default effort medium; no frozen evaluation has selected the lowest qualifying effort yet",
+          "costUsd": 0.16529679999999997,
+          "inputTokens": 27567,
+          "outputTokens": 5609,
+          "toolCalls": 5,
+          "latencyMs": 47679
+        }
+      ],
+      "escalations": 0
+    }
+  },
+  "events": [
+    {
+      "at": "2026-10-24T22:20:18.553Z",
+      "stage": "queued",
+      "detail": "Run attempt 1 queued for request v1 (manifest 80ce3773aa70\u2026) \u00b7 policy caid.j12-effort-policy/1 \u00b7 start effort medium \u00b7 reserved $3.00 of the order budget."
+    },
+    {
+      "at": "2026-10-24T22:20:18.650Z",
+      "stage": "running",
+      "detail": "Worker worker-47340-787254 claimed the run."
+    },
+    {
+      "at": "2026-10-24T22:20:18.651Z",
+      "stage": "manifest-verified",
+      "detail": "3 frozen sources re-hashed and verified (digest 80ce3773aa70\u2026)."
+    },
+    {
+      "at": "2026-10-24T22:20:19.329Z",
+      "stage": "policy-selected",
+      "detail": "caid.j12-effort-policy/1: start effort medium (provisional default; not yet selected by a frozen evaluation). provisional default effort medium; no frozen evaluation has selected the lowest qualifying effort yet. Reserved $3.00 (order ceiling $3.00, prior spend $0.00) \u00b7 \u226412 tool calls \u00b7 \u226410 min \u00b7 one repair/escalation pass."
+    },
+    {
+      "at": "2026-10-24T22:20:19.330Z",
+      "stage": "model-requested",
+      "detail": "Requested claude-opus-5-5 (SDK resolves opus \u2192 claude-opus-5-5; supported effort low/medium/high/xhigh/max) via opus-agent-sdk."
+    },
+    {
+      "at": "2026-10-24T22:20:19.335Z",
+      "stage": "model-started",
+      "detail": "initial phase: claude-opus-5-5 at effort medium via Claude Agent SDK 0.3.310, isolated (no filesystem settings, no built-in tools, strict MCP) \u00b7 budget $3.00 \u00b7 \u226440 turns."
+    },
+    {
+      "at": "2026-10-24T22:20:19.670Z",
+      "stage": "model-effective",
+      "detail": "Effective model claude-opus-5-5 \u00b7 Claude Code 2.1.310 \u00b7 credentials /login managed key \u00b7 permission mode dontAsk \u00b7 tools mcp__caid__find_anchors, mcp__caid__read_source, mcp__caid__submit_packet."
+    },
+    {
+      "at": "2026-10-24T22:20:21.338Z",
+      "stage": "tool",
+      "detail": "read_source S1 (745 bytes)."
+    },
+    {
+      "at": "2026-10-24T22:20:22.076Z",
+      "stage": "tool",
+      "detail": "read_source S2 (615 bytes)."
+    },
+    {
+      "at": "2026-10-24T22:20:22.082Z",
+      "stage": "tool",
+      "detail": "read_source S3 (558 bytes)."
+    },
+    {
+      "at": "2026-10-24T22:20:29.973Z",
+      "stage": "tool",
+      "detail": "find_anchors resolved 15/15 quotes."
+    },
+    {
+      "at": "2026-10-24T22:20:59.987Z",
+      "stage": "tool",
+      "detail": "submit_packet accepted. 3 source register entries compared with the frozen manifest. 31 citations resolved against 13 verified anchors. 2 alternatives, 6 evidence gaps, 6 known facts, 4 artifact impacts checked."
+    },
+    {
+      "at": "2026-10-24T22:21:07.013Z",
+      "stage": "model-finished",
+      "detail": "initial phase result success \u00b7 47.7s \u00b7 $0.1653 \u00b7 tokens in/out 27567/5609 \u00b7 effort reported medium \u00b7 context window 1,000,000."
+    },
+    {
+      "at": "2026-10-24T22:21:07.013Z",
+      "stage": "validated",
+      "detail": "3 source register entries compared with the frozen manifest. 31 citations resolved against 13 verified anchors. 2 alternatives, 6 evidence gaps, 6 known facts, 4 artifact impacts checked."
+    },
+    {
+      "at": "2026-10-24T22:21:07.014Z",
+      "stage": "ready",
+      "detail": "Packet version 1 published (digest 335cd8effe2f\u2026). Packet ready means preparation delivered, not engineering approval."
+    }
+  ],
+  "packetReceipt": {
+    "requested": {
+      "provider": "anthropic-agent-sdk",
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "contextWindow": 0,
+      "maxTurns": 40,
+      "maxToolCalls": 12,
+      "maxBudgetUsd": 3,
+      "deadlineMs": 600000,
+      "repairAttempts": 1,
+      "policyVersion": "caid.j12-effort-policy/1"
+    },
+    "effective": {
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "contextWindow": 1000000,
+      "supportsEffort": true,
+      "supportedEffortLevels": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "sdkVersion": "0.3.310",
+      "claudeCodeVersion": "2.1.310",
+      "apiKeySource": "/login managed key",
+      "permissionMode": "dontAsk",
+      "tools": [
+        "mcp__caid__find_anchors",
+        "mcp__caid__read_source",
+        "mcp__caid__submit_packet"
+      ],
+      "betas": [],
+      "policyVersion": "caid.j12-effort-policy/1",
+      "selectionReason": "provisional default effort medium; no frozen evaluation has selected the lowest qualifying effort yet",
+      "provisional": true,
+      "phases": [
+        {
+          "phase": "initial",
+          "effort": "medium",
+          "reason": "provisional default effort medium; no frozen evaluation has selected the lowest qualifying effort yet",
+          "costUsd": 0.16529679999999997,
+          "inputTokens": 27567,
+          "outputTokens": 5609,
+          "toolCalls": 5,
+          "latencyMs": 47679
+        }
+      ],
+      "escalations": 0
+    },
+    "startedAt": "2026-10-24T22:20:18.650Z",
+    "completedAt": "2026-10-24T22:21:07.013Z",
+    "latencyMs": 48363,
+    "costUsd": 0.16529679999999997,
+    "inputTokens": 27567,
+    "outputTokens": 5609,
+    "toolCalls": 5,
+    "repairs": 0,
+    "origin": "opus-run",
+    "orderId": "49672d3a-b44c-45e9-9998-64485d1199e6",
+    "runId": "d53d711f-f8e8-4a49-b56c-19b8b41f03ea",
+    "attempt": 1,
+    "packetVersion": 1,
+    "requestVersion": 1,
+    "manifestDigest": "80ce3773aa7040a0373dd8f290d87296033020cae1944edf0ee03675f4aa53a8",
+    "validation": {
+      "ok": true,
+      "checkedAt": "2026-10-24T22:21:07.014Z",
+      "checks": [
+        "3 source register entries compared with the frozen manifest.",
+        "31 citations resolved against 13 verified anchors.",
+        "2 alternatives, 6 evidence gaps, 6 known facts, 4 artifact impacts checked."
+      ]
+    }
+  },
+  "packetSummary": {
+    "headline": "Intermittent J12 disconnects under vibration are reported but unmeasured; no vibration test, retention-force data, candidate datasheet or independent review exists, so no connector change can be approved for release yet.",
+    "nextAction": {
+      "action": "Run and record a vibration test on the current J12 connector, including retention-force measurement and failure-mode inspection, before selecting retain or replace.",
+      "ownerRole": "Test engineering lead",
+      "requiredInput": "Vibration profile representative of the test track, a Rover Alpha unit at a confirmed board revision, and retention-force measurement method",
+      "gapId": "EG1",
+      "citations": [
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-vib"
+        },
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-block"
+        }
+      ]
+    },
+    "evidenceGaps": [
+      "No vibration-test result for the current J12 connector; no vibration profile or accelerometer data recorded.",
+      "No connector retention-force measurement.",
+      "Failure mode unidentified: shell, contacts or harness strain relief.",
+      "No candidate replacement datasheet, pin mapping table or compatibility measurements.",
+      "Controller board baseline revision not supplied (brief baseline: Unknown).",
+      "Independent engineering review has not approved the change."
+    ],
+    "limitations": [
+      "Packet ready means the paid preparation artifact was delivered. It is not engineering approval, a completed test or permission to release hardware. Independent engineering review and relevant physical evidence remain required.",
+      "All three frozen sources self-label as synthetic fixtures invented for demonstration (S1 states it is not a real field report), while the request is described as a real customer request; findings should be confirmed against real records.",
+      "No measured data, part numbers, ratings or test results were supplied; none are asserted in this packet.",
+      "The field lead's recommendation to investigate the connector change is a source statement, not evidence of a root cause or approval.",
+      "Operating conditions and constraints beyond S2 R1/R2 were not supplied in the brief."
+    ]
+  },
+  "clarifications": [
+    {
+      "question": "Is the hardware change approved for release, and which source says so?",
+      "status": "answered",
+      "citations": [
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-review"
+        },
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-block"
+        },
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-vib"
+        },
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-ret"
+        },
+        {
+          "sourceId": "S3",
+          "anchorId": "s3-ds"
+        },
+        {
+          "sourceId": "S1",
+          "anchorId": "s1-nodata"
+        }
+      ],
+      "receipt": {
+        "origin": "opus-run",
+        "effective": {
+          "model": "claude-opus-5-5",
+          "effort": "medium",
+          "contextWindow": 1000000,
+          "supportsEffort": null,
+          "supportedEffortLevels": null,
+          "sdkVersion": "0.3.310",
+          "claudeCodeVersion": "2.1.310",
+          "apiKeySource": "/login managed key",
+          "permissionMode": "dontAsk",
+          "tools": [
+            "mcp__caid__find_anchors",
+            "mcp__caid__read_source",
+            "mcp__caid__submit_answer"
+          ],
+          "betas": [],
+          "policyVersion": "caid.j12-effort-policy/1",
+          "selectionReason": "clarification uses the policy default effort medium",
+          "provisional": true,
+          "phases": [
+            {
+              "phase": "initial",
+              "effort": "medium",
+              "reason": "clarification",
+              "costUsd": 0.048838099999999995,
+              "inputTokens": 18664,
+              "outputTokens": 733,
+              "toolCalls": 2,
+              "latencyMs": 8216
+            }
+          ],
+          "escalations": 0
+        },
+        "costUsd": 0.048838099999999995,
+        "inputTokens": 18664,
+        "outputTokens": 733,
+        "toolCalls": 2,
+        "latencyMs": 8216,
+        "packetId": "9b23c24c-f8a2-4c8e-8991-246c0737f565",
+        "packetVersion": 1,
+        "manifestDigest": "80ce3773aa7040a0373dd8f290d87296033020cae1944edf0ee03675f4aa53a8"
+      },
+      "created_at": "2026-10-24T22:22:26.300Z",
+      "answered_at": "2026-10-24T22:22:34.517Z"
+    }
+  ]
+}

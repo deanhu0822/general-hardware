@@ -1,0 +1,356 @@
+{
+  "schema": "caid.j12-review-packet/1",
+  "summary": {
+    "objective": "Decide whether to retain and investigate the current J12 connector or evaluate a replacement, without changing the board pinout.",
+    "requestVersion": 1,
+    "baseline": "Unknown",
+    "productLabel": "Rover Alpha (synthetic demonstration unit)",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "headline": "Two synthetic shift notes conflict on board revision (Rev C vs Rev D) and event count (three vs five); neither is established as authoritative and no vibration or retention data exists."
+  },
+  "sourceRegister": [
+    {
+      "sourceId": "SYN-NOTE-A-v1",
+      "name": "Shift note A — J12 disconnects (synthetic)",
+      "revision": "v1 (synthetic)",
+      "sha256": "db96c3bcd1e743ff66f71cc927de80beaebb35890dd9bd6cb4dd69d31c484c05",
+      "bytes": 268,
+      "importedAt": "2026-10-24T00:00:00.000Z",
+      "anchors": [
+        {
+          "anchorId": "a-rev",
+          "sourceId": "SYN-NOTE-A-v1",
+          "start": 62,
+          "end": 116,
+          "excerpt": "Controller board revision on the affected unit: Rev C."
+        },
+        {
+          "anchorId": "a-events",
+          "sourceId": "SYN-NOTE-A-v1",
+          "start": 117,
+          "end": 192,
+          "excerpt": "Three J12 disconnect events were logged during vibration on the test track."
+        },
+        {
+          "anchorId": "a-nodata",
+          "sourceId": "SYN-NOTE-A-v1",
+          "start": 193,
+          "end": 268,
+          "excerpt": "No vibration-test result or retention measurement is attached to this note."
+        }
+      ]
+    },
+    {
+      "sourceId": "SYN-NOTE-B-v1",
+      "name": "Shift note B — J12 disconnects (synthetic)",
+      "revision": "v1 (synthetic)",
+      "sha256": "e30fd5fa4cc23509a2b92ba3459ea164f4e3102de88a7afb3387ff05e2619caf",
+      "bytes": 346,
+      "importedAt": "2026-10-24T00:00:00.000Z",
+      "anchors": [
+        {
+          "anchorId": "b-rev",
+          "sourceId": "SYN-NOTE-B-v1",
+          "start": 62,
+          "end": 116,
+          "excerpt": "Controller board revision on the affected unit: Rev D."
+        },
+        {
+          "anchorId": "b-events",
+          "sourceId": "SYN-NOTE-B-v1",
+          "start": 117,
+          "end": 191,
+          "excerpt": "Five J12 disconnect events were logged during vibration on the test track."
+        },
+        {
+          "anchorId": "b-noref",
+          "sourceId": "SYN-NOTE-B-v1",
+          "start": 192,
+          "end": 270,
+          "excerpt": "This note does not reference shift note A and does not explain the difference."
+        },
+        {
+          "anchorId": "b-nodata",
+          "sourceId": "SYN-NOTE-B-v1",
+          "start": 271,
+          "end": 346,
+          "excerpt": "No vibration-test result or retention measurement is attached to this note."
+        }
+      ]
+    }
+  ],
+  "knownFacts": [
+    {
+      "id": "F1",
+      "statement": "Note A records the controller board revision on the affected unit as Rev C.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-rev"
+        }
+      ]
+    },
+    {
+      "id": "F2",
+      "statement": "Note B records the controller board revision on the affected unit as Rev D.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-rev"
+        }
+      ]
+    },
+    {
+      "id": "F3",
+      "statement": "Note A states three J12 disconnect events were logged during vibration on the test track.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-events"
+        }
+      ]
+    },
+    {
+      "id": "F4",
+      "statement": "Note B states five J12 disconnect events were logged during vibration on the test track.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-events"
+        }
+      ]
+    },
+    {
+      "id": "F5",
+      "statement": "Note B does not reference note A and does not explain the difference.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-noref"
+        }
+      ]
+    },
+    {
+      "id": "F6",
+      "statement": "Neither note has a vibration-test result or retention measurement attached.",
+      "kind": "synthetic fixture",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-nodata"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-nodata"
+        }
+      ]
+    }
+  ],
+  "alternatives": [
+    {
+      "id": "ALT1",
+      "kind": "retain-investigate",
+      "title": "Retain and investigate the current J12 connector",
+      "description": "Keep the existing J12 connector and pinout while reconciling the conflicting records and gathering physical evidence on the disconnect mechanism.",
+      "prerequisites": [
+        "Confirm the actual board revision of the affected unit",
+        "Reconcile the event count from primary logs",
+        "Obtain vibration profile and retention measurements"
+      ],
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-nodata"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-nodata"
+        }
+      ]
+    },
+    {
+      "id": "ALT2",
+      "kind": "replacement",
+      "title": "Evaluate a replacement connector",
+      "description": "Evaluate a replacement connector that preserves the existing board pinout and drive controller footprint (author-entered constraint). Compatibility is unknown until evidenced; no candidate part is identified in the sources.",
+      "prerequisites": [
+        "Establish authoritative baseline revision",
+        "Define vibration requirement",
+        "Confirm pinout and footprint compatibility with evidence"
+      ],
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-rev"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-rev"
+        }
+      ]
+    }
+  ],
+  "affectedArtifacts": [
+    {
+      "id": "AA1",
+      "label": "J12 connector on the drive controller board",
+      "status": "confirmed",
+      "basis": "Both notes report J12 disconnect events.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-events"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-events"
+        }
+      ]
+    },
+    {
+      "id": "AA2",
+      "label": "Controller board revision record (Rev C / Rev D)",
+      "status": "suggested",
+      "basis": "Inference: the revision record must be corrected once the authoritative revision is established.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-rev"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-rev"
+        }
+      ]
+    },
+    {
+      "id": "AA3",
+      "label": "Test-track disconnect event log",
+      "status": "suggested",
+      "basis": "Inference: event count differs between notes, so the primary log needs review.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-noref"
+        }
+      ]
+    }
+  ],
+  "evidenceGaps": [
+    {
+      "id": "G1",
+      "gap": "Conflict: board revision recorded as Rev C (note A) vs Rev D (note B); no authoritative record identified.",
+      "whyItMatters": "The baseline and footprint/pinout constraints cannot be confirmed without knowing the revision.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-rev"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-rev"
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "gap": "Conflict: three (note A) vs five (note B) disconnect events; the difference is unexplained.",
+      "whyItMatters": "Failure frequency drives the severity assessment and choice between alternatives.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-events"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-events"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-noref"
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "gap": "No vibration-test result, vibration profile or retention measurement is available.",
+      "whyItMatters": "Without physical evidence the root cause and any replacement suitability cannot be assessed.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-A-v1",
+          "anchorId": "a-nodata"
+        },
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-nodata"
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "gap": "Unknown whether the notes describe the same unit, the same run, or overlapping events.",
+      "whyItMatters": "Inference: the notes may be counting different or overlapping event sets.",
+      "citations": [
+        {
+          "sourceId": "SYN-NOTE-B-v1",
+          "anchorId": "b-noref"
+        }
+      ]
+    }
+  ],
+  "reviewQuestions": [
+    {
+      "id": "Q1",
+      "question": "Which board revision (Rev C or Rev D) is physically on the affected unit?",
+      "owner": "Hardware engineer",
+      "prerequisite": "Physical inspection of the unit's board marking"
+    },
+    {
+      "id": "Q2",
+      "question": "What do the primary test-track logs show for the number of J12 disconnect events?",
+      "owner": "Test lead",
+      "prerequisite": "Access to raw event logs"
+    },
+    {
+      "id": "Q3",
+      "question": "What vibration profile and retention measurements are required before any connector change is considered?",
+      "owner": "Reliability engineer",
+      "prerequisite": "Defined test-track vibration conditions"
+    },
+    {
+      "id": "Q4",
+      "question": "Who authored notes A and B and do they refer to the same unit and runs?",
+      "owner": "Engineering manager",
+      "prerequisite": "Shift records"
+    }
+  ],
+  "nextAction": {
+    "action": "Physically confirm the board revision of the affected unit and reconcile it against both notes before selecting an alternative.",
+    "ownerRole": "Hardware engineer",
+    "requiredInput": "Board marking inspection of the affected Rover Alpha unit",
+    "gapId": "G1",
+    "citations": [
+      {
+        "sourceId": "SYN-NOTE-A-v1",
+        "anchorId": "a-rev"
+      },
+      {
+        "sourceId": "SYN-NOTE-B-v1",
+        "anchorId": "b-rev"
+      }
+    ]
+  },
+  "limitations": [
+    "Packet ready means the paid preparation artifact was delivered. It is not engineering approval, a completed test or permission to release hardware. Independent engineering review and relevant physical evidence remain required.",
+    "All sources are labeled synthetic fixtures invented for demonstration; statements are cited as synthetic fixture content.",
+    "Neither note is treated as authoritative; conflicts are recorded as evidence gaps.",
+    "The pinout/footprint constraint is author-entered from the brief (SYN-REQ-v1 is not in the frozen manifest)."
+  ]
+}

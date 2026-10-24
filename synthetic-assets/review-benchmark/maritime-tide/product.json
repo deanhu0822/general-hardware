@@ -1,0 +1,10 @@
+{
+  "id": "maritime-tide",
+  "name": "Tide buoy controller",
+  "sector": "maritime",
+  "sectorLabel": "Maritime",
+  "context": "a buoy telemetry bench",
+  "stress": "salt spray",
+  "split": "development",
+  "synthetic": true
+}

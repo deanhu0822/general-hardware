@@ -1,0 +1,60 @@
+{
+  "id": "consumer-echo-complete",
+  "sector": "consumer-tech",
+  "sectorLabel": "Consumer Tech",
+  "productId": "consumer-echo",
+  "kind": "complete",
+  "split": "development",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Echo speaker prototype (synthetic)",
+    "title": "J12 connector review for Echo speaker prototype",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "consumer-tech"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during drop handling using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a speaker battery-interface prototype.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-CONSUMER-ECHO-REQ-v1",
+      "name": "Echo speaker prototype \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Echo speaker prototype, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "consumer-echo/complete/sources/SYN-CONSUMER-ECHO-REQ-v1.md",
+      "sha256": "cc3fcf5dca19270104408dd91e3932c37b9835ce4b67b7b39be389a408d378bf"
+    },
+    {
+      "sourceId": "SYN-CONSUMER-ECHO-OBS-v1",
+      "name": "Echo speaker prototype \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nEcho speaker prototype: J12 connects the controller to the sensor harness in a speaker battery-interface prototype.\nOperator note: an intermittent link interruption was reported during drop handling.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "consumer-echo/complete/sources/SYN-CONSUMER-ECHO-OBS-v1.md",
+      "sha256": "5cec165de19799c5889bb70d10fae0ffc50f3abc109569d783e7fda69bd00773"
+    },
+    {
+      "sourceId": "SYN-CONSUMER-ECHO-STATUS-v1",
+      "name": "Echo speaker prototype \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "consumer-echo/complete/sources/SYN-CONSUMER-ECHO-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-CONSUMER-ECHO-LOG-v1",
+      "name": "Echo speaker prototype \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic handling note: bench profile DEMO-CONSUMER-ECHO.\nThe note records 2 interruptions in 10 bench cycles under drop handling.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "consumer-echo/complete/sources/SYN-CONSUMER-ECHO-LOG-v1.md",
+      "sha256": "27b82751814a8aaf372d946b4f90137c745ad2c7762b368c132333da03d6290e"
+    }
+  ],
+  "synthetic": true
+}

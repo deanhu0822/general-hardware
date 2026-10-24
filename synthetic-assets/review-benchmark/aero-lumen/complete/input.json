@@ -1,0 +1,60 @@
+{
+  "id": "aero-lumen-complete",
+  "sector": "aerospace",
+  "sectorLabel": "Aerospace",
+  "productId": "aero-lumen",
+  "kind": "complete",
+  "split": "development",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Lumen avionics bench (synthetic)",
+    "title": "J12 connector review for Lumen avionics bench",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "aerospace"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during thermal cycling using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a wing-instrumentation bench.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-AERO-LUMEN-OBS-v1",
+      "name": "Lumen avionics bench \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nLumen avionics bench: J12 connects the controller to the sensor harness in a wing-instrumentation bench.\nOperator note: an intermittent link interruption was reported during thermal cycling.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "aero-lumen/complete/sources/SYN-AERO-LUMEN-OBS-v1.md",
+      "sha256": "265abd175eede005d97c3037651c128314a8e59216c1cbb54d2c46544f3aae29"
+    },
+    {
+      "sourceId": "SYN-AERO-LUMEN-LOG-v1",
+      "name": "Lumen avionics bench \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic temperature chamber note: bench profile DEMO-AERO-LUMEN.\nThe note records 2 interruptions in 10 bench cycles under thermal cycling.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "aero-lumen/complete/sources/SYN-AERO-LUMEN-LOG-v1.md",
+      "sha256": "d8edb3097939562229329cddb7a487cd1b0126f67abab32447421412356e629b"
+    },
+    {
+      "sourceId": "SYN-AERO-LUMEN-REQ-v1",
+      "name": "Lumen avionics bench \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Lumen avionics bench, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "aero-lumen/complete/sources/SYN-AERO-LUMEN-REQ-v1.md",
+      "sha256": "f7103e57366e531becd568f09329469136137ac681adaaf8f489ebfd7027d47b"
+    },
+    {
+      "sourceId": "SYN-AERO-LUMEN-STATUS-v1",
+      "name": "Lumen avionics bench \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "aero-lumen/complete/sources/SYN-AERO-LUMEN-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    }
+  ],
+  "synthetic": true
+}

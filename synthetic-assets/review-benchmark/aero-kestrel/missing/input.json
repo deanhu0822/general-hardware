@@ -1,0 +1,36 @@
+{
+  "id": "aero-kestrel-missing",
+  "sector": "aerospace",
+  "sectorLabel": "Aerospace",
+  "productId": "aero-kestrel",
+  "kind": "missing",
+  "split": "holdout",
+  "description": "Only an observation; request harness flex evidence and identify unknown baseline/mapping.",
+  "brief": {
+    "product": "Kestrel actuator rig (synthetic)",
+    "title": "J12 connector review for Kestrel actuator rig",
+    "baseline": "",
+    "sectorTags": [
+      "aerospace"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during harness flex using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: an actuator sensor harness rig.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-AERO-KESTREL-OBS-v1",
+      "name": "Kestrel actuator rig \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nKestrel actuator rig: J12 connects the controller to the sensor harness in an actuator sensor harness rig.\nOperator note: an intermittent link interruption was reported during harness flex.\nThis observation alone does not establish a cause or suitability for operational use.\nNo harness flex test record accompanies this note.\nBaseline revision and J12 pin mapping are not recorded.\nIndependent review is pending.\n",
+      "file": "aero-kestrel/missing/sources/SYN-AERO-KESTREL-OBS-v1.md",
+      "sha256": "7337974d421b1ff0e5fa7b4ff7cf291c58d5348a69c4b00285a1e6b9c9507ae0"
+    }
+  ],
+  "synthetic": true
+}

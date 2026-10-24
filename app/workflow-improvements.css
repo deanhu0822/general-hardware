@@ -10,7 +10,7 @@
 button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
 .mode-panel p, .guided-panel p, .agent-panel > p, .details-section p { font-size: 16px; line-height: 1.55; }
 .mode-panel h3, .guided-panel h3, .agent-panel h3 { font-size: 20px; }
-.mode-panel small, .guided-panel small, .agent-panel small, .details small, .sidebar small { font-size: 12px; line-height: 1.5; color: var(--muted); }
+.mode-panel small, .guided-panel small, .agent-panel small, .details small, .sidebar small { font-size: 12px; line-height: 1.5; color: var(--graph-muted); }
 .mode-panel button, .guided-panel button, .agent-panel button, .mode-panel input, .agent-panel textarea, .guided-panel textarea { font-size: 14px; }
 .eyebrow, .detail-kicker, .graph-meta small, .blast-legend { font-size: 12px; }
 .react-flow__node.is-dimmed { opacity: .48; filter: saturate(.65); }

@@ -1,0 +1,52 @@
+{
+  "id": "robotics-cedar-conflicting",
+  "sector": "robotics-industrial",
+  "sectorLabel": "Robotics & Industrial",
+  "productId": "robotics-cedar",
+  "kind": "conflicting",
+  "split": "development",
+  "description": "Preserve both contradictory baseline/results; request authoritative records without choosing a winner.",
+  "brief": {
+    "product": "Cedar inspection crawler (synthetic)",
+    "title": "J12 connector review for Cedar inspection crawler",
+    "baseline": "",
+    "sectorTags": [
+      "robotics-industrial"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during vibration using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: an inspection-crawler control harness.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-STATUS-v1",
+      "name": "Cedar inspection crawler \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nNeither note is designated authoritative. The original test record and serial-to-revision register are unavailable.\nJ12 pin mapping is absent. Independent engineering review is pending.\n",
+      "file": "robotics-cedar/conflicting/sources/SYN-ROBOTICS-CEDAR-STATUS-v1.md",
+      "sha256": "7715716c17acffba4c6ef3a858042d08bf0f12e481f175142f26d1a098143b61"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-NOTE-A-v1",
+      "name": "Cedar inspection crawler \u2014 note-a (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nCedar inspection crawler: J12 connects the controller to the sensor harness in an inspection-crawler control harness.\nOperator note: an intermittent link interruption was reported during vibration.\nThis observation alone does not establish a cause or suitability for operational use.\nShift note A names baseline Rev B and records 2 interruptions in 10 vibration cycles.\n",
+      "file": "robotics-cedar/conflicting/sources/SYN-ROBOTICS-CEDAR-NOTE-A-v1.md",
+      "sha256": "0c9f400d0f3f9072cfaae6216e971384d2fe925c0813463793537949a5f8532a"
+    },
+    {
+      "sourceId": "SYN-ROBOTICS-CEDAR-NOTE-B-v1",
+      "name": "Cedar inspection crawler \u2014 note-b (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nFollow-up note for the same run and unit names baseline Rev C and records 7 interruptions in 10 vibration cycles.\nIt does not explain or supersede shift note A.\n",
+      "file": "robotics-cedar/conflicting/sources/SYN-ROBOTICS-CEDAR-NOTE-B-v1.md",
+      "sha256": "2cfe86466ac652205089f0ad98b4c2158e3940b81ec6f909e78b6e2da42220a7"
+    }
+  ],
+  "synthetic": true
+}

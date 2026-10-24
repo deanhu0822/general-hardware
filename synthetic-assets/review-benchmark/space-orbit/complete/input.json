@@ -1,0 +1,60 @@
+{
+  "id": "space-orbit-complete",
+  "sector": "space",
+  "sectorLabel": "Space",
+  "productId": "space-orbit",
+  "kind": "complete",
+  "split": "holdout",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Orbit deployment rig (synthetic)",
+    "title": "J12 connector review for Orbit deployment rig",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "space"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during shock using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a deployment-mechanism ground rig.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-SPACE-ORBIT-REQ-v1",
+      "name": "Orbit deployment rig \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Orbit deployment rig, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "space-orbit/complete/sources/SYN-SPACE-ORBIT-REQ-v1.md",
+      "sha256": "85d75eefe246889df99ce9adc970dd5cbe3d324ddf851e2e31d6a5579c48c911"
+    },
+    {
+      "sourceId": "SYN-SPACE-ORBIT-OBS-v1",
+      "name": "Orbit deployment rig \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nOrbit deployment rig: J12 connects the controller to the sensor harness in a deployment-mechanism ground rig.\nOperator note: an intermittent link interruption was reported during shock.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "space-orbit/complete/sources/SYN-SPACE-ORBIT-OBS-v1.md",
+      "sha256": "cdc454d04785620e13667cc43ce12d57d78212bfcaa07f3bc7c66cbba9b6d1d0"
+    },
+    {
+      "sourceId": "SYN-SPACE-ORBIT-STATUS-v1",
+      "name": "Orbit deployment rig \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "space-orbit/complete/sources/SYN-SPACE-ORBIT-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-SPACE-ORBIT-LOG-v1",
+      "name": "Orbit deployment rig \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic shock-event log: bench profile DEMO-SPACE-ORBIT.\nThe note records 2 interruptions in 10 bench cycles under shock.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "space-orbit/complete/sources/SYN-SPACE-ORBIT-LOG-v1.md",
+      "sha256": "264b657a7de6b97749664ea4b5ed4507dec8271c8594aa3b5668e5b37ead6d0c"
+    }
+  ],
+  "synthetic": true
+}

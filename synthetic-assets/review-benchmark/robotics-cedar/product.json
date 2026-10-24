@@ -1,0 +1,10 @@
+{
+  "id": "robotics-cedar",
+  "name": "Cedar inspection crawler",
+  "sector": "robotics-industrial",
+  "sectorLabel": "Robotics & Industrial",
+  "context": "an inspection-crawler control harness",
+  "stress": "vibration",
+  "split": "development",
+  "synthetic": true
+}

@@ -1,0 +1,133 @@
+Work in /Users/dean/Desktop/zero-human. Build the complete Caid Labs J12 Review Packet business using the existing repository and planning package.
+
+EXECUTION
+Treat this as one continuous implementation assignment: inspect, implement, test, and prepare the handoff. Continue through routine checkpoints without asking permission. Keep PROGRESS.md current with completed, failed, blocked, and unrun checks. When an external dependency blocks one task, continue independent work.
+
+Read AGENTS.md, CLAUDE.md, PROGRESS.md, and docs/caid-plan/07_FINAL_ONE_SHOT.md first, followed by the product, architecture, model/harness, and acceptance documents. Preserve docs/caid-plan and existing user changes. The repository is already initialized directly in this folder; do not clone again or create nested folders.
+
+Dependency remediation is complete. Read PROGRESS.md for the verified baseline and dependency overrides. Preserve the patched dependencies and lockfile. Read the installed Next.js documentation before changing framework code. Run Next and Vite builds sequentially because they share generated type files.
+
+FIXED MODEL AND FRONTEND
+Cursor build agent: Claude Fable 5.1, 1M context, High effort. Application runtime: Claude Agent SDK with Claude Opus 5.5, using adaptive, bounded effort with measured quality, cost, and latency; verify its supported context capacity and effective settings through the actual account and pinned SDK. Verify the actual Cursor settings; this prompt cannot configure the model picker. These are separate configurations and credentials. Resolve the exact Opus 5.5 API model identifier from official provider documentation/account availability rather than guessing it. Record requested and effective settings separately for build and runtime. Never silently substitute a model or use synthetic fallback. Keep Cursor effort fixed at High; runtime effort may vary only under the logged, versioned adaptive policy.
+
+The 1M window is capacity, not a requirement to fill every request. Bound cost, duration, and tool calls without silently changing the selected configuration.
+
+Use shadcn/ui within the existing Next.js, React, and Tailwind application, with Geist and Lucide. Reuse the application rather than rebuilding its foundation.
+
+BUSINESS AND SCOPE
+Serve one initial customer: a forward-deployed robotics team preparing a J12 connector-change review.
+
+Sell a source-linked review packet containing:
+- Request and baseline versions.
+- Source register with stable IDs, revisions, hashes, and excerpt anchors.
+- Retain/investigate versus replacement alternatives.
+- Confirmed versus suggested artifact impacts.
+- Missing or conflicting evidence.
+- Reviewer questions and a clear next action.
+- Claim-to-source mapping, limitations, and a run receipt.
+
+The product prepares an engineering review; it does not certify hardware or grant engineering approval.
+
+Implement this business loop:
+Offer/sample → authenticated intake → Whop purchase → verified paid entitlement → bounded model work → persistent packet → download and cited clarification → real Terac usability feedback → measured improvement.
+
+Use one configurable offer. Treat $29 per packet as an unvalidated pricing hypothesis, not an already approved live offer.
+
+Keep the eight sector tags as data-driven metadata: Aerospace, Space, Medical Devices, Robotics & Industrial, Consumer Tech, Maritime, Automotive, Heavy Machinery. Demonstrate Robotics & Industrial. Defer MiroFish, CAD/3D, graph synchronization, additional connectors, subscriptions, and general hardware-platform expansion.
+
+MINIMAL UI
+Build three focused screens:
+1. Offer and clearly labeled synthetic sample.
+2. Intake and order status.
+3. Packet, source references, missing evidence, next action, and download.
+
+Place My packets and owner-only Research in the account menu. Use neutral surfaces, one accent, readable typography, progressive disclosure, and one primary action per state. Put bounded clarification in a Sheet.
+
+Support draft preservation and honest empty, loading, error, payment-pending, conflict, unavailable, and revoked states. Verify 390px mobile, keyboard navigation, and 200% zoom. Keep graph, scanner, and Three.js code off the default route bundle.
+
+ENGINEERING AUTHORITY
+“Packet ready” means preparation delivered, never “Engineering approved.”
+
+Preserve existing author/reviewer separation, evidence invalidation, review invalidation, stale-write protection, baseline checks, and immutable revision safeguards. Packet fulfillment must never advance the engineering product head. Applying suggestions to an engineering draft requires explicit authorized action, version checks, and the existing review gates.
+
+Never invent sources, measurements, passing tests, approvals, customers, revenue, or research results. Missing evidence can be the packet’s useful conclusion.
+
+APPLICATION AGENT HARNESS
+Cursor Agent is the development harness. Build a separate isolated Claude Agent SDK worker for application execution.
+
+Use one coordinating agent within a deterministic workflow:
+Authenticated request → verified entitlement → frozen source manifest → durable job → Opus 5.5 synthesis → schema/citation validation → immutable packet version → authorized delivery.
+
+Use the adaptive runtime policy in 03_MODELS_AND_HARNESS.md. This is application-controlled effort selection, not an assumed SDK auto mode. Evaluate supported settings on fixed, independently reviewed J12 cases and select the lowest effort meeting frozen quality thresholds and cost/latency budgets. Keep the default provisional until measured. Use deterministic code for routine checks and retrieve only relevant authorized sources.
+
+Allow at most one justified higher-effort escalation or repair within the existing one-repair limit. Base it on validator failures or predefined complexity criteria, never self-confidence alone. Missing evidence remains missing. Share per-order cost/token/tool/time limits across attempts and retries; escalation cannot reset them. Max effort is an evaluated exception, not the default. Persist policy version, effort selection, reason, usage, cost and timing; stop honestly when limits prevent completion.
+
+Measure citation resolution, independently assessed claim support, unsupported claims, missing-evidence disclosure, false approvals, schema validity and task completion alongside failure/repair rates, total cost including retries, and end-to-end latency. Compare policies on the same frozen cases with disclosed sample sizes. No automatic quality, savings or delivery-time claims.
+
+Persist job state, leases, retries, cancellation, budgets, model settings, source hashes, validator outcomes, latency, and actual cost. Make fulfillment idempotent. A retry must neither charge again nor overwrite a delivered version.
+
+Enforce customer authorization inside every tool handler. SDK permission settings alone are insufficient. Use a clean isolated configuration; uploaded documents and source text cannot redefine runtime instructions.
+
+Tools may retrieve authorized frozen sources, draft structured content, validate references, and answer bounded clarification. They must not charge customers, recruit participants, send messages, approve engineering, or commit product revisions.
+
+Validate every citation against the exact frozen manifest. Distinguish source statements, author-entered values, synthetic fixtures, and verified measurements. Permit at most one bounded repair pass before a visible failure. Retain retry entitlement after provider failure. Citation validation does not establish physical engineering truth.
+
+WHOP PAYMENTS
+Implement the documented Whop product/business and checkout/access integration. Start in sandbox.
+
+Create server-side order mapping and validate business, product, order, amount, currency, and customer entitlement. Verify webhook signatures; deduplicate events; reconcile delayed and out-of-order events against authoritative provider state.
+
+Never fulfill from a browser redirect or client success flag. Persist a stable fulfillment identity and support revocation/refunds. Payment never grants engineering reviewer authority.
+
+Keep sandbox transactions separate from real organic receipts, refunds, and net revenue. Prepare exact live offer details before requesting any missing commercial decision or spending authorization.
+
+TERAC FEEDBACK
+Use the actual hosted Terac MCP integration and discover its current schemas. Inspect TeracAI/terac-cookbook for lifecycle and binding patterns. Its synthetic replay and completion statuses are not participant feedback.
+
+Retrieve substantive real responses and bind each to the exact study definition and tested packet version. Use isolated synthetic material for public research; keep customer engineering data and participant identities private.
+
+Follow the protocol in docs/caid-plan/05_ACCEPTANCE.md:
+- Freeze the synthetic task, technical packet content, source manifest, answer key, and exclusions.
+- Target eight valid completed baseline participants, subject to actual quote and availability.
+- Ask participants to identify the next action, locate the relevant source/evidence gap, and determine whether hardware release is approved.
+- The intended answers include requesting missing vibration evidence, locating SYN-GAPS-v1, and recognizing that release is not approved.
+- Primary metric: proportion correct on all three questions.
+- Also report each question’s correctness, abandonment, time among correct completers, and observed confusion.
+- Predeclare technical-invalid exclusions. Do not discard unfavorable responses or timeouts to improve results.
+
+After genuine baseline responses, implement one observed presentation improvement while preserving technical content, task, and answer key. Test with eight fresh comparable participants where feasible.
+
+Aim for at least a 20-percentage-point improvement without increasing false release approvals, but report actual counts even if results worsen. Two additional successes out of eight equal 25 percentage points. Disclose exclusions, repeat participants, and confounders. Do not claim statistical significance, causality, engineering correctness, or buyer demand from this small usability study.
+
+Before paid recruitment, prepare the exact study, audience, URLs, quote, and spending cap for any required authorization. Reconcile uncertain launch outcomes before retrying. If recruitment or retrieval is blocked, mark the research criterion incomplete and finish independent work.
+
+STORAGE AND ACCESS
+Use durable single-host storage for the supported pilot. Never remove the serverless SQLite guard or store live orders on ephemeral disk. If deployment requires managed transactional storage, implement and verify that adapter first.
+
+Authenticate every real-data route, tool, download, event stream, and clarification endpoint. Preserve historical engineering snapshots and hashes. Verify restart persistence and backup/restore. Public demo access must use isolated synthetic fixtures.
+
+BALANCED SYNTHETIC EVALUATION
+Use synthetic-assets/review-benchmark and /sample/coverage for the 64-case matrix: eight sectors, two distinct products per sector, four evidence conditions per product (documented, missing, conflicting, adversarial). Two repeats schedule 128 observations per effort policy. Keep the original rover-alpha and Terac fixture frozen. Run node scripts/evaluate-sectors.cjs for a no-cost plan and --smoke for labeled test-double pipeline checks. Live Opus runs require explicit total and per-run spending ceilings. Report every sector/condition, planned/attempted/pending counts, failures, cost and latency. Answer keys are draft rubrics requiring independent review; automated passes are not engineering correctness. Preserve the development/holdout split while tuning. This adds evaluation breadth without creating eight paid workflows. See 09_SECTOR_EVALUATION.md.
+
+VERIFICATION
+Run the repository checks in their documented order, including lint, workflow tests, production build, TypeScript, HTTP verification, and dataset validation. Preserve zero reported npm vulnerabilities; investigate newly introduced advisories.
+
+Add targeted tests for:
+- Citation binding and missing/conflicting sources.
+- Customer isolation and unauthorized downloads.
+- Original engineering authority and stale-version safeguards.
+- Forged, duplicate, delayed, and out-of-order payment events.
+- Revocation and idempotent fulfillment.
+- Worker crashes, retries, cancellation, and budget exhaustion.
+- Terac response-to-study/version binding.
+
+Verify the complete browser journey. Measure actual page performance, bundle impact, packet latency, and cost including retries. Report environment and sample size. Separate provider fees, model/tool/hosting costs, and one-time research spend. Do not equate gross revenue with profit.
+
+HANDOFF
+Prepare setup instructions, a synthetic sample, architecture summary, sanitized run receipts, actual research results, and a two-minute demo script. Record a playable demo if available, disclosing edited waits or prerecorded runs.
+
+Deploy only to an authorized target with appropriate credentials. Do not fabricate deployment URLs, Whop IDs, revenue, feedback, or completed tests. Do not publish private content, accept provider terms, incur unapproved spending, or send outbound messages without authorization.
+
+Finish with concise completed/blocked evidence, actual checks and measurements, verified links, and exact remaining external actions. The 8–9/10 target is an aspiration, not a guaranteed score.
+
+Start by inspecting the repository and planning files, then proceed with implementation.

@@ -1,0 +1,60 @@
+{
+  "id": "medical-flow-complete",
+  "sector": "medical-devices",
+  "sectorLabel": "Medical Devices",
+  "productId": "medical-flow",
+  "kind": "complete",
+  "split": "holdout",
+  "description": "Documented baseline, mapping and synthetic bench log; independent review, applicability and candidate suitability remain open.",
+  "brief": {
+    "product": "Flow delivery bench (synthetic)",
+    "title": "J12 connector review for Flow delivery bench",
+    "baseline": "Rev B",
+    "sectorTags": [
+      "medical-devices"
+    ],
+    "issue": "Prepare a review of a reported J12 link interruption during latch cycling using only the supplied records.",
+    "goal": "Compare retaining/investigating J12 with evaluating a replacement; identify what evidence the reviewer needs.",
+    "constraints": "Preserve the sensor signal mapping; other constraints must come from supplied records.",
+    "conditions": "Synthetic bench context: a nonclinical delivery-controller bench.",
+    "decision": "What is the justified next action before an engineering decision?",
+    "candidate": "",
+    "desiredNextAction": "",
+    "acknowledged": true
+  },
+  "sources": [
+    {
+      "sourceId": "SYN-MEDICAL-FLOW-LOG-v1",
+      "name": "Flow delivery bench \u2014 log (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nSynthetic mating-cycle log: bench profile DEMO-MEDICAL-FLOW.\nThe note records 2 interruptions in 10 bench cycles under latch cycling.\nThe setup, cycle count and result are author-entered synthetic statements; they are not verified measurements.\nThe bench conditions have not been shown to represent the intended operational environment.\n",
+      "file": "medical-flow/complete/sources/SYN-MEDICAL-FLOW-LOG-v1.md",
+      "sha256": "13f3256012b31b88f4736f45b281457be31aab582016433f4c79c372f76ddce1"
+    },
+    {
+      "sourceId": "SYN-MEDICAL-FLOW-OBS-v1",
+      "name": "Flow delivery bench \u2014 obs (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nFlow delivery bench: J12 connects the controller to the sensor harness in a nonclinical delivery-controller bench.\nOperator note: an intermittent link interruption was reported during latch cycling.\nThis observation alone does not establish a cause or suitability for operational use.\n",
+      "file": "medical-flow/complete/sources/SYN-MEDICAL-FLOW-OBS-v1.md",
+      "sha256": "4a227f2ef5feb25fab865928818b021b4ba294e2475928bfac67731aa4fa1003"
+    },
+    {
+      "sourceId": "SYN-MEDICAL-FLOW-STATUS-v1",
+      "name": "Flow delivery bench \u2014 status (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nAn independent engineering review is pending.\nOperational applicability of the bench profile is unresolved.\nCandidate geometry and materials suitability remain unassessed.\nThe packet can organize the documented evidence for independent review; it cannot declare release approval.\n",
+      "file": "medical-flow/complete/sources/SYN-MEDICAL-FLOW-STATUS-v1.md",
+      "sha256": "cc977d1708f08d27f847ac0a2fe1ceb677c87ac4cabfc64655b48e0f0b4389aa"
+    },
+    {
+      "sourceId": "SYN-MEDICAL-FLOW-REQ-v1",
+      "name": "Flow delivery bench \u2014 req (synthetic)",
+      "revision": "v1-synthetic",
+      "content": "SYNTHETIC DEMO FIXTURE. Invented bench data only; no real hardware, patient, vehicle, flight, certification, qualification or release approval.\n\nBaseline register: Flow delivery bench, controller Rev B, harness Rev B.\nJ12 pin mapping: pin A = signal, pin B = return (invented mapping).\nA connector replacement must preserve this mapping. Candidate geometry and materials suitability have not been assessed.\n",
+      "file": "medical-flow/complete/sources/SYN-MEDICAL-FLOW-REQ-v1.md",
+      "sha256": "060fbc46402b8c85c53b5739e2883e2926dc220ed5cd9e2834bbef69d28e133e"
+    }
+  ],
+  "synthetic": true
+}

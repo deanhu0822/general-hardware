@@ -1,0 +1,10 @@
+{
+  "id": "aero-kestrel",
+  "name": "Kestrel actuator rig",
+  "sector": "aerospace",
+  "sectorLabel": "Aerospace",
+  "context": "an actuator sensor harness rig",
+  "stress": "harness flex",
+  "split": "holdout",
+  "synthetic": true
+}

@@ -1,0 +1,10 @@
+{
+  "id": "aero-lumen",
+  "name": "Lumen avionics bench",
+  "sector": "aerospace",
+  "sectorLabel": "Aerospace",
+  "context": "a wing-instrumentation bench",
+  "stress": "thermal cycling",
+  "split": "development",
+  "synthetic": true
+}
