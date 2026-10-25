@@ -1,4 +1,4 @@
-# Caid Labs
+# General Hardware
 
 **Agent-powered deployment support for hardware startups.**
 
