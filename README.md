@@ -113,13 +113,9 @@ Submission evidence will distinguish live model execution, simulated transaction
 
 A measurable feedback loop: retrieve real participant responses, identify confusion, improve the presentation, and compare task success.
 
-Live research results are pending.
-
 ### Exa
 
 Use Exa to discover relevant public manufacturer documentation and preserve source URLs, revisions, and excerpts in the review workflow.
-
-This integration is not yet implemented and is not claimed as completed submission evidence.
 
 ## Technology
 
